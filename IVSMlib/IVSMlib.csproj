@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5B96017-7297-4268-B68C-72328FD02140}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>IVSMlib</RootNamespace>
+    <AssemblyName>IVSMlib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DomCore">
+      <HintPath>..\..\..\DomCore\DomCore\bin\Debug\DomCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="Construct\Actions\CreatePathMoveAction.cs" />
+    <Compile Include="Construct\Actions\CreateSimpleLineAction.cs" />
+    <Compile Include="Construct\Actions\DragAndDropCellAction.cs" />
+    <Compile Include="Construct\Actions\NoneAction.cs" />
+    <Compile Include="Construct\Actions\RedirectLineAtions.cs" />
+    <Compile Include="Construct\IAction.cs" />
+    <Compile Include="Construct\MapConstructor.cs" />
+    <Compile Include="ControlBar.xaml.cs">
+      <DependentUpon>ControlBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Convarters\TabSizeConverter.cs" />
+    <Compile Include="Global\GlobalStore.cs" />
+    <Compile Include="Global\MenuManager.cs" />
+    <Compile Include="CustomControls\ItemChecker.xaml.cs">
+      <DependentUpon>ItemChecker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Switch.xaml.cs">
+      <DependentUpon>Switch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentBar.xaml.cs">
+      <DependentUpon>DocumentBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventsSupport\MoveButtonArg.cs" />
+    <Compile Include="EventsSupport\ConditionMoveButtonArg.cs" />
+    <Compile Include="IVSMModel\ActionModel.cs" />
+    <Compile Include="IVSMModel\ConditionModel.cs" />
+    <Compile Include="IVSMModel\DecisionModel.cs" />
+    <Compile Include="IVSMModel\DocumentModel.cs" />
+    <Compile Include="IVSMModel\IVSM.cs" />
+    <Compile Include="IVSMModel\MoveModel.cs" />
+    <Compile Include="IVSMModel\PlayerModel.cs" />
+    <Compile Include="IVSMModel\ProblemModel.cs" />
+    <Compile Include="Language\StringRes.cs" />
+    <Compile Include="Link\DocConnector.cs" />
+    <Compile Include="MainTable.xaml.cs">
+      <DependentUpon>MainTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PropertyBar.xaml.cs">
+      <DependentUpon>PropertyBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropsHolders\DateProps.cs" />
+    <Compile Include="PropsHolders\DocumentListProps.cs" />
+    <Compile Include="PropsHolders\DropCheckListProps.cs" />
+    <Compile Include="PropsHolders\DropListProps.cs" />
+    <Compile Include="PropsHolders\PropsHolder.cs" />
+    <Compile Include="PropsHolders\Props.cs" />
+    <Compile Include="PropsHolders\StringProps.cs" />
+    <Compile Include="PropsHolders\TimeProps.cs" />
+    <Compile Include="PropsHolders\VisualProps\ColorProps.cs" />
+    <Compile Include="TableDom\CellDom\ActionDom.cs" />
+    <Compile Include="TableDom\CellDom\ConditionDom.cs" />
+    <Compile Include="TableDom\CellDom\PlayerDom.cs" />
+    <Compile Include="TableDom\DocumentDom\DefDocumentDom.cs" />
+    <Compile Include="TableDom\LineDom\PathLineDom.cs" />
+    <Compile Include="TableDom\Linker.cs" />
+    <Compile Include="TableDom\MapDom.cs" />
+    <Compile Include="TableDom\MarkDom\MDecisionDom.cs" />
+    <Compile Include="TableDom\MarkDom\MProblemDom.cs" />
+    <Compile Include="TableDom\MarkDom\MTextLableDom.cs" />
+    <Compile Include="TableDom\TableUIDom.cs" />
+    <Compile Include="TableDom\TypesDom\TimeDom.cs" />
+    <Compile Include="Types\Time.cs" />
+    <Compile Include="Utils\ImportManager.cs" />
+    <Compile Include="Utils\IVSMUtils.cs" />
+    <Compile Include="Utils\WindowExtensions.cs" />
+    <Compile Include="ViewModel\ControlBar\ControlBarVM.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\ColorItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\ComboCheckBoxItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\IVSMComboBoxItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\DataItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\DocumentItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\Item.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\TColorItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\TextAreaItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\TextBoxItem.cs" />
+    <Compile Include="ViewModel\ControlBar\Items\TimeItem.cs" />
+    <Compile Include="ViewModel\DocumentBar\DocumentBarVM.cs" />
+    <Compile Include="ViewModel\MainTable\IAction.cs" />
+    <Compile Include="ViewModel\MainTable\MainTableVM.cs" />
+    <Compile Include="ViewModel\PropertyBar\PropertyBarVM.cs" />
+    <Compile Include="ViewModel\DocumentBar\Units\DocumentUnit.cs" />
+    <Compile Include="TableDom\Lexer.cs" />
+    <Compile Include="VsmCanvas\CellUI\ActionCell.cs" />
+    <Compile Include="VsmCanvas\CellUI\Cell.cs" />
+    <Compile Include="VsmCanvas\CellUI\CellMouseResult.cs" />
+    <Compile Include="VsmCanvas\CellUI\ConditionCell.cs" />
+    <Compile Include="VsmCanvas\CellUI\ConditionMoveLineButton.cs" />
+    <Compile Include="VsmCanvas\CellUI\EmptyCell.cs" />
+    <Compile Include="VsmCanvas\CellUI\Interface\IDocument.cs" />
+    <Compile Include="VsmCanvas\CellUI\Interface\IDom.cs" />
+    <Compile Include="VsmCanvas\CellUI\Interface\ITime.cs" />
+    <Compile Include="VsmCanvas\CellUI\MoveLineButton.cs" />
+    <Compile Include="VsmCanvas\CellUI\Interface\IConnecting.cs" />
+    <Compile Include="VsmCanvas\CellUI\PlayerCell.cs" />
+    <Compile Include="VsmCanvas\IProps.cs" />
+    <Compile Include="VsmCanvas\ITableElement.cs" />
+    <Compile Include="VsmCanvas\LineUI\Interface\ILTime.cs" />
+    <Compile Include="VsmCanvas\LineUI\Line.cs" />
+    <Compile Include="VsmCanvas\LineUI\MoveLine.cs" />
+    <Compile Include="VsmCanvas\LineUI\PathLine.cs" />
+    <Compile Include="VsmCanvas\MarksUI\ISize.cs" />
+    <Compile Include="VsmCanvas\MarksUI\Mark.cs" />
+    <Compile Include="VsmCanvas\MarksUI\MDecision.cs" />
+    <Compile Include="VsmCanvas\MarksUI\MProblem.cs" />
+    <Compile Include="VsmCanvas\MarksUI\MTextLable.cs" />
+    <Compile Include="VsmCanvas\MouseBehavior\MouseBehavior.cs" />
+    <Compile Include="VsmCanvas\TableUI.cs" />
+    <Compile Include="VsmCanvas\Types\MouseButtonState.cs" />
+    <Compile Include="VsmCanvas\Units\ProblemDocumentTable.cs" />
+    <Compile Include="VsmCanvas\Units\TButton.cs" />
+    <Compile Include="VsmCanvas\Units\TableFiled.cs" />
+    <Compile Include="VsmCanvas\Units\Column.cs" />
+    <Compile Include="VsmCanvas\Units\HorisontalRuler.cs" />
+    <Compile Include="VsmCanvas\Units\Row.cs" />
+    <Compile Include="VsmCanvas\Units\TimeAxis.cs" />
+    <Compile Include="VsmCanvas\Units\VerticalRuler.cs" />
+    <Compile Include="VsmCanvas\Units\VisualButton.cs" />
+    <Compile Include="VsmCanvas\VisualItem.cs" />
+    <Compile Include="VsmCanvas\VsmCustomCanvas.cs" />
+    <Compile Include="Windows\ViewModels\WSaveAsImageVM.cs" />
+    <Compile Include="Windows\ViewModels\WSetAxisMegVM.cs" />
+    <Compile Include="Windows\WColumn.xaml.cs">
+      <DependentUpon>WColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WHelp.xaml.cs">
+      <DependentUpon>WHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WMainMenu.xaml.cs">
+      <DependentUpon>WMainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WRow.xaml.cs">
+      <DependentUpon>WRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WSaveAsImage.xaml.cs">
+      <DependentUpon>WSaveAsImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WSetAxisMeg.xaml.cs">
+      <DependentUpon>WSetAxisMeg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WSetTableSize.xaml.cs">
+      <DependentUpon>WSetTableSize.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ControlBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ItemChecker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Switch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocumentBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Res\Dictionary\Templates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StringRes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WColumn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WSaveAsImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WSetAxisMeg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WSetTableSize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\act.png" />
+    <Resource Include="Res\cond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\edit.png" />
+    <Resource Include="Res\veiw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\del_col.png" />
+    <Resource Include="Res\del_row.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\meg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\icons8_delete_document_80px.png" />
+    <Resource Include="Res\icons8_new_copy_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VisualDom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\RowColW\a_left.png" />
+    <Resource Include="Res\RowColW\a_right.png" />
+    <Resource Include="Res\RowColW\del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\RowColW\a_down.png" />
+    <Resource Include="Res\RowColW\a_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\des_n.png" />
+    <Resource Include="Res\CBar\problem_n.png" />
+    <Resource Include="Res\CBar\text_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\save_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\open_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\clear_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\iamge_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\new_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\ControlBar\settings.png" />
+    <Resource Include="Res\ControlBar\visual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\dec_ic.png" />
+    <Resource Include="Res\CBar\problem_ic.png" />
+    <Resource Include="Res\CBar\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\help_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\act.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\cond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\meg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\CBar\edit_ic.png" />
+    <Resource Include="Res\CBar\view_ic.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

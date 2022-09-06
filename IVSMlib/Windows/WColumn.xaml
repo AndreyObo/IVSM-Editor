@@ -1,0 +1,22 @@
+﻿<Window x:Class="IVSMlib.Windows.WColumn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IVSMlib.Windows"
+        mc:Ignorable="d"
+        Title="WColumn" Height="30" Width="85" WindowStyle="None" ResizeMode="NoResize">
+    <Grid VerticalAlignment="Center" Background="White">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="Left_Button" Click="Left_Col" Background="White" Width="25" Height="25">
+                <Image Source="../Res/RowColW/a_left.png"/>
+            </Button>
+            <Button Click="Del_Col" Background="White" Margin="5,0,5,0"  Width="25" Height="25">
+                <Image Source="../Res/RowColW/del.png"/>
+            </Button>
+            <Button x:Name="Right_Button" Click="Right_Col" Background="White" Width="25" Height="25">
+                <Image Source="../Res/RowColW/a_right.png"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

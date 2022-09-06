@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="IVSMlib.ControlBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IVSMlib"
+             xmlns:controls="clr-namespace:IVSMlib.CustomControls"
+             mc:Ignorable="d" d:DesignWidth="1300" Height="45">
+    <UserControl.Resources>
+        <ResourceDictionary Source="./Res/Dictionary/Templates.xaml"/>
+        
+    </UserControl.Resources>
+    
+    <Grid Background="#505052" VerticalAlignment="Top" >
+        <StackPanel Orientation="Horizontal">
+            <!--<Image MouseDown="LogoClick" Margin="0,0,5,0" Source="Res/logo.png"/>-->
+            <Menu Width="40" Height="40" Background="Transparent">
+                <Menu.ItemsPanel>
+
+                    <ItemsPanelTemplate>
+
+                        <VirtualizingStackPanel Orientation="Horizontal" />
+
+                    </ItemsPanelTemplate>
+
+                </Menu.ItemsPanel>
+                <MenuItem Template="{StaticResource Menu_SubMenu_Template}" Background="Transparent">
+                    <MenuItem.Icon>
+                        <Image MouseDown="LogoClick" Source="Res/logo.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Новая карта" Command="{Binding NewMapCommand}" Template="{StaticResource Item_Template}">
+                        <MenuItem.Icon>
+                            <Image Source="Res/CBar/new_file.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Открыть" Command="{Binding OpenDocCommand}" Template="{StaticResource Item_Template}">
+                        <MenuItem.Icon>
+                            <Image Source="Res/CBar/open_ic.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Сохранить" Command="{Binding SaveCommand}" Template="{StaticResource Item_Template}">
+                        <MenuItem.Icon>
+                            <Image  Source="Res/CBar/save_ic.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Сохранить как" Command="{Binding SaveDocCommand}" Template="{StaticResource Item_Template}">
+                        <MenuItem.Icon>
+                            <Image  Source="Res/CBar/save_as.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="{Binding SaveImgCommand}" Header="Импорт" Template="{StaticResource Item_Template}">
+                        <MenuItem.Icon>
+                            <Image  Source="Res/CBar/iamge_ic.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--<MenuItem Header="Закрыть" Template="{StaticResource Item_Template}">
+                        <MenuItem.Icon>
+                            <Image  Source="Res/CBar/close.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>-->
+                </MenuItem>
+            </Menu>
+
+            <!--<TextBlock Margin="0,0,20,0" FontSize="16" Foreground="White" VerticalAlignment="Center">Оформление ПТЗ</TextBlock>-->
+            <TextBox Text="{Binding TableName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Background="Transparent" BorderThickness="0,0,0,1" Width="300" Margin="0,0,20,0" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
+            <controls:Switch IsEditMode="{Binding EditMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <controls:ItemChecker Margin="10,7,210,5" Mode="{Binding ItemMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding ProblemCreateCommand}">
+                <Image Source="Res/CBar/problem_ic.png"/>
+            </Button>
+            <Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding DecisionCreateCommand}">
+                <Image Source="Res/CBar/dec_ic.png"/>
+            </Button>
+            <Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding TextLableCreateCommand}">
+                <Image Source="Res/CBar/text.png"/>
+            </Button>
+            <!--<ToggleButton Background="#8F8F9A" IsChecked="{Binding ActionBtnState, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="80" Margin="5">
+                <Image Width="30" Source="Res/act.png"/>
+            </ToggleButton>
+            <ToggleButton Background="#8F8F9A" IsChecked="{Binding ConditionBtnState, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="80" Margin="5">
+                <Image Width="20" Source="Res/cond.png"/>
+            </ToggleButton>-->
+            <Rectangle RadiusX="4" RadiusY="4" Margin="10,0,10,0" Fill="DarkGray" Width="8" Height="8"/>
+            <!--<ToggleButton Background="#8F8F9A" IsChecked="{Binding ViewBtnState, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="100" Margin="5">
+                <Image Width="20" Source="Res/veiw.png"/>
+            </ToggleButton>
+            <ToggleButton Background="#8F8F9A" IsChecked="{Binding EditBtnState, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="100" Margin="5">
+                <Image Width="20" Source="Res/edit.png"/>
+            </ToggleButton>-->
+            <!--<Rectangle Fill="Gray" Width="2"/>-->
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding ColorButtonCommand}">
+                <Image Width="20" Source="Res/color.png"/>
+            </Button>-->
+            <!--<Rectangle Fill="Gray" Width="2"/>-->
+            <!--<ToggleButton Command="{Binding DelRowColumnCommand}" Background="#8F8F9A" Width="50" Margin="5">
+                <Image Width="20" Source="Res/del_row.png"/>
+            </ToggleButton>-->
+            <Button Background="#8F8F9A" Width="40" Margin="5" Command="{Binding DeleteButtonCommand}">
+                <Image Width="20" Source="Res/remove.png"/>
+            </Button>
+          
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding DeleteColumnCommand}">
+                <Image Width="20" Source="Res/del_row.png"/>
+            </Button>
+            <Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding DeleteRowCommand}">
+                <Image Width="20" Source="Res/del_col.png"/>
+            </Button>-->
+           
+            <Button Background="#8F8F9A" Width="40" Margin="5" Command="{Binding TableSizeCommand}">
+                <Image Width="20" Source="Res/size.png"/>
+            </Button>
+          
+            <!--<Button  Width="100" Margin="5" Command="{Binding AlightColumnCommand}">AColl</Button>
+            <Button  Width="100" Margin="5" Command="{Binding AlightRowCommand}">ARow</Button>-->
+            <Button Background="#8F8F9A"  Width="40" Margin="5" Command="{Binding AlightTableCommand}">
+                <Image Width="20" Source="Res/table.png"/>
+            </Button>
+           
+            <!--<Button  Width="100" Margin="5" Command="{Binding RedirectLineCommand}">RedirLine</Button>-->
+            
+            <Button Background="#8F8F9A" Width="40" Margin="5" Command="{Binding AxisMegCommand}">
+                <Image Width="20" Source="Res/meg.png"/>
+            </Button>
+
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding InsertRowColumnCommand}">
+                insert c/r
+            </Button>-->
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding DelRowColumnCommand}">
+                del button
+            </Button>-->
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding SaveDocCommand}">
+                <Image Margin="3,3,3,3" Source="Res/CBar/save_ic.png"/>
+            </Button>-->
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding OpenDocCommand}">
+                <Image Margin="3,3,3,3" Source="Res/CBar/open_ic.png"/>
+            </Button>-->
+            <Button Background="#8F8F9A" Width="40" Margin="5" Command="{Binding ClearTableCommand}">
+                <Image Margin="3,3,3,3" Source="Res/CBar/clear_ic.png"/>
+            </Button>
+            <Rectangle RadiusX="4" RadiusY="4" Margin="10,0,10,0" Fill="DarkGray" Width="8" Height="8"/>
+            <Button Background="#8F8F9A" Width="40" Margin="5" Command="{Binding HelpCommand}">
+                <Image Margin="3,3,3,3" Source="Res/CBar/help_ic.png"/>
+            </Button>
+            <!--<Button Background="#8F8F9A" Width="50" Margin="5" Command="{Binding SaveImgCommand}">
+                <Image Margin="3,3,3,3" Source="Res/CBar/iamge_ic.png"/>
+            </Button>-->
+        </StackPanel>
+       
+    </Grid>
+</UserControl>

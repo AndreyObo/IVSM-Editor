@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="IVSMlib.CustomControls.ItemChecker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IVSMlib.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="200">
+    <Grid>
+        <Canvas  MouseDown="Canvas_MouseDown" Grid.Column="0">
+            <Rectangle x:Name="rect" Fill="White" Width="200" Height="30" RadiusX="5" RadiusY="5" />
+            <Rectangle MouseEnter="ButtonEnter" MouseLeave="ButtonLeave" MouseDown="condition_MouseDown" Canvas.Left="100" x:Name="condition" Fill="White" Width="100" Height="30" RadiusX="5" RadiusY="5" />
+            <Rectangle MouseEnter="ButtonEnter" MouseLeave="ButtonLeave" MouseDown="operation_MouseDown" Canvas.Left="0" x:Name="operation" Fill="White"  Width="100" Height="30" RadiusX="5" RadiusY="5" >
+            </Rectangle>
+
+
+            <Rectangle MouseEnter="swither_MouseEnter" MouseLeave="swither_MouseLeave" x:Name="swither" Fill="gray" Width="100" Height="30" RadiusX="5" RadiusY="5" />
+
+            
+            <Image MouseDown="operation_MouseDown" Width="30" Source="../Res/act.png" Canvas.Left="33" Canvas.Top="8"/>
+            <Image MouseDown="condition_MouseDown" Width="20" Source="../Res/cond.png" Canvas.Left="142" Canvas.Top="5"/>
+        </Canvas>
+    </Grid>
+</UserControl>

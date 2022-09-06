@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib">
+    <clr:String x:Key="EditString">Режим редактирования. Используется для добавления новых операций на карту и создания связей между ними. В данном режиме недоступна работа с объектами "Проблема", "Решение", "Текст" </clr:String>
+    <clr:String x:Key="ViewString">Режим просмотра. В данном режиме доступна работа со всеми объектами карты.</clr:String>
+
+    <clr:String x:Key="ActString">Переключиться в режим создания операции "Действие"</clr:String>
+    <clr:String x:Key="CondString">Переключиться в режим создания операции "Условие"</clr:String>
+    
+    <clr:String x:Key="MyConstString">Добавить элемент "Проблема" на карту потока</clr:String>
+    <clr:String x:Key="DesString">Добавить элемент "Решение" на карту потока</clr:String>
+    <clr:String x:Key="TextString">Добавить текстовый блок на карту потока</clr:String>
+    <clr:String x:Key="DelString">Удалить выделенный элемент в таблице</clr:String>
+    <clr:String x:Key="SizeString">Изменить размер таблицы</clr:String>
+    <clr:String x:Key="AlightString">Выровнять все ячейки таблицы по размеру</clr:String>
+    <clr:String x:Key="TimeString">Изменить единицы измерения на шкале времени</clr:String>
+    <clr:String x:Key="ClearString">Очистить всю таблицу</clr:String>
+</ResourceDictionary>

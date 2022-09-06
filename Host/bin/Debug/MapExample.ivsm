@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IVSM>
+  <Table Width="1300" Heigth="400" Title="Пример карты потока">
+    <RowDefinition>
+      <Row>80</Row>
+      <Row>80</Row>
+      <Row>80</Row>
+      <Row>80</Row>
+      <Row>80</Row>
+    </RowDefinition>
+    <ColumnDefinition>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>112,5</Column>
+      <Column>100</Column>
+      <Column>100</Column>
+      <Column>100</Column>
+      <Column>100</Column>
+    </ColumnDefinition>
+    <Cells>
+      <Player Row="0" Column="0">
+        <Decoration>
+          <Fill>#FFFF00</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Organization">Директор</PropItem>
+          <PropItem Name="Department">DEpartment</PropItem>
+        </Props>
+      </Player>
+      <Action Row="0" Column="1">
+        <Text>Издание указа</Text>
+        <Decoration>
+          <Fill>#FF8080</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Издание указа</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>0</Id>
+        </Documents>
+        <Lines>
+          <Line Type="RightBottom" Id="0" />
+        </Lines>
+      </Action>
+      <Action Row="0" Column="3">
+        <Text>Корректировка</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Корректировка</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>0</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftBottom" Id="1" />
+          <Line Type="RightBottom" Id="2" />
+        </Lines>
+      </Action>
+      <Action Row="0" Column="11">
+        <Text>Подписание</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Подписание</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>0</Id>
+          <Id>3</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftBottom" Id="13" />
+        </Lines>
+      </Action>
+      <Player Row="1" Column="0">
+        <Decoration>
+          <Fill>#FFFF00</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Organization">Секретарь</PropItem>
+          <PropItem Name="Department">DEpartment</PropItem>
+        </Props>
+      </Player>
+      <Action Row="1" Column="2">
+        <Text>Протокол</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Протокол</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>0</Id>
+          <Id>1</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftTop" Id="0" />
+          <Line Type="RightTop" Id="1" />
+        </Lines>
+      </Action>
+      <Action Row="1" Column="6">
+        <Text>Доработка</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Доработка</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>1</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftMiddle" Id="3" />
+          <Line Type="RightBottom" Id="8" />
+        </Lines>
+      </Action>
+      <Action Row="1" Column="8">
+        <Text>Протокол</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Протокол</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>1</Id>
+          <Id>3</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftBottom" Id="9" />
+          <Line Type="RightBottom" Id="10" />
+          <Line Type="RightBottom" Id="11" />
+        </Lines>
+      </Action>
+      <Action Row="1" Column="10">
+        <Text>Протокол</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Протокол</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>3</Id>
+          <Id>1</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftBottom" Id="12" />
+          <Line Type="RightTop" Id="13" />
+        </Lines>
+      </Action>
+      <Player Row="2" Column="0">
+        <Decoration>
+          <Fill>#FFFF00</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Organization">Юрист</PropItem>
+          <PropItem Name="Department">DEpartment</PropItem>
+        </Props>
+      </Player>
+      <Action Row="2" Column="4">
+        <Text>Проверка</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Проверка</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>0</Id>
+          <Id>1</Id>
+          <Id>2</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftTop" Id="2" />
+          <Line Type="RightMiddle" Id="6" />
+        </Lines>
+      </Action>
+      <Condition Row="2" Column="5">
+        <Props>
+          <PropItem Name="ActionTime">1~Minute</PropItem>
+          <PropItem Name="WatingTime">1~Minute</PropItem>
+        </Props>
+        <Lines>
+          <Line Type="Top" Id="3" />
+          <Line Type="Left" Id="6" />
+          <Line Type="Bottom" Id="5" />
+        </Lines>
+      </Condition>
+      <Action Row="2" Column="7">
+        <Text>Проверка</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Проверка</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>3</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftTop" Id="8" />
+          <Line Type="LeftBottom" Id="7" />
+          <Line Type="RightTop" Id="9" />
+        </Lines>
+      </Action>
+      <Player Row="3" Column="0">
+        <Decoration>
+          <Fill>#FFFF00</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Organization">Старший сотрудник</PropItem>
+          <PropItem Name="Department">DEpartment</PropItem>
+        </Props>
+      </Player>
+      <Action Row="3" Column="6">
+        <Text>Расчет показателей</Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Расчет показателей</PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>3</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftMiddle" Id="5" />
+          <Line Type="RightTop" Id="7" />
+        </Lines>
+      </Action>
+      <Player Row="4" Column="0">
+        <Decoration>
+          <Fill>#FFFF00</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Organization">Бухгалтер</PropItem>
+          <PropItem Name="Department">DEpartment</PropItem>
+        </Props>
+      </Player>
+      <Action Row="4" Column="9">
+        <Text>Расчет </Text>
+        <Decoration>
+          <Fill>#FFB6C1</Fill>
+          <BorderColor>#A9A9A9</BorderColor>
+        </Decoration>
+        <Props>
+          <PropItem Name="Action">Расчет </PropItem>
+          <PropItem Name="ActionTime">10~Minute</PropItem>
+          <PropItem Name="WatingTime">5~Minute</PropItem>
+        </Props>
+        <Documents>
+          <Id>3</Id>
+        </Documents>
+        <Lines>
+          <Line Type="LeftTop" Id="11" />
+          <Line Type="RightTop" Id="10" />
+          <Line Type="RightTop" Id="12" />
+        </Lines>
+      </Action>
+    </Cells>
+    <Lines>
+      <Line Id="0">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="230" Y1="155" X2="250" Y2="175" />
+        </LinePath>
+      </Line>
+      <Line Id="1">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="342,5" Y1="175" X2="362,5" Y2="155" />
+        </LinePath>
+      </Line>
+      <Line Id="2">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="455" Y1="155" X2="475" Y2="255" />
+        </LinePath>
+      </Line>
+      <Line Id="3">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="633,75" Y1="255" X2="633,75" Y2="205" />
+          <Line X1="633,75" Y1="205" X2="700" Y2="205" />
+        </LinePath>
+      </Line>
+      <Line Id="5">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="633,75" Y1="315" X2="633,75" Y2="365" />
+          <Line X1="633,75" Y1="365" X2="700" Y2="365" />
+        </LinePath>
+      </Line>
+      <Line Id="6">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="567,5" Y1="285" X2="603,75" Y2="285" />
+        </LinePath>
+      </Line>
+      <Line Id="7">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="792,5" Y1="335" X2="812,5" Y2="315" />
+        </LinePath>
+      </Line>
+      <Line Id="8">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="792,5" Y1="235" X2="812,5" Y2="255" />
+        </LinePath>
+      </Line>
+      <Line Id="9">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="905" Y1="255" X2="925" Y2="235" />
+        </LinePath>
+      </Line>
+      <Line Id="10">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="1105" Y1="415" X2="1105" Y2="415" />
+        </LinePath>
+      </Line>
+      <Line Id="11">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="1005" Y1="235" X2="1025" Y2="415" />
+        </LinePath>
+      </Line>
+      <Line Id="12">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="1105" Y1="415" X2="1125" Y2="235" />
+        </LinePath>
+      </Line>
+      <Line Id="13">
+        <Decoration>
+          <Fill>#504C4B</Fill>
+          <DashStyle>NoDash</DashStyle>
+        </Decoration>
+        <Props>
+          <PropItem Name="Time">1~Minute</PropItem>
+        </Props>
+        <LinePath>
+          <Line X1="1205" Y1="175" X2="1225" Y2="155" />
+        </LinePath>
+      </Line>
+    </Lines>
+    <Documents>
+      <Document Id="0">
+        <Decoration>
+          <Fill>#0080C0</Fill>
+        </Decoration>
+        <Props>
+          <PropItem Name="DocumentName">Указ</PropItem>
+        </Props>
+      </Document>
+      <Document Id="1">
+        <Decoration>
+          <Fill>#00FF80</Fill>
+        </Decoration>
+        <Props>
+          <PropItem Name="DocumentName">Протокол</PropItem>
+        </Props>
+      </Document>
+      <Document Id="2">
+        <Decoration>
+          <Fill>#FF8040</Fill>
+        </Decoration>
+        <Props>
+          <PropItem Name="DocumentName">Акт разногласий</PropItem>
+        </Props>
+      </Document>
+      <Document Id="3">
+        <Decoration>
+          <Fill>#8000FF</Fill>
+        </Decoration>
+        <Props>
+          <PropItem Name="DocumentName">Форма Д2</PropItem>
+        </Props>
+      </Document>
+    </Documents>
+    <Marks>
+      <Problem>
+        <Location X="586,4" Y="230,6" />
+        <Size Width="36" Height="36" />
+        <Title>Вероятность ошибок в заполнении</Title>
+      </Problem>
+      <Problem>
+        <Location X="900" Y="300,2" />
+        <Size Width="40" Height="40" />
+        <Title>Лишняя обработка</Title>
+      </Problem>
+    </Marks>
+  </Table>
+</IVSM>

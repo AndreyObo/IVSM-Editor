@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IVSMLocal language="Russian">
+<Controls>
+  <Player>Действующий субьект</Player>
+  <Action>Операция</Action>
+  <Condition>Операция с условием</Condition>
+  <Move>Перемещение</Move>
+</Controls>
+<Props>
+  <Name>Имя</Name>
+  <CycleTime>Время цикла</CycleTime>
+  <Description>Описание</Description>
+  <WasteType>Тип потери</WasteType>
+  <Days>Дни</Days>
+  <Hours>Часы</Hours>
+  <Minutes>Минуты</Minutes>
+  <Seconds>Секунды</Seconds>
+  <Dash>Штрих</Dash>
+  <NoDash>Без штриха</NoDash>
+</Props>
+</IVSMLocal>

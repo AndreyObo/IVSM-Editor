@@ -1,0 +1,47 @@
+﻿<Window x:Class="IVSMlib.Windows.WSaveAsImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IVSMlib.Windows"
+        xmlns:canvas="clr-namespace:IVSMlib.VsmCanvas"
+        mc:Ignorable="d"
+        Title="Импорт" Height="210.262" Width="409.709" ResizeMode="NoResize" WindowStyle="ToolWindow">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="3,3,3,3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="Имя файла"/>
+                <TextBox x:Name="FileTB" Grid.Column="1"/>
+                <Button Click="BrowseClick" Grid.Column="2" Margin="7,0,3,0" Content="Обзор"/>
+            </Grid>
+
+            <Grid Margin="0,8,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="8*"/>
+                  
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="Формат"/>
+                <ComboBox x:Name="FormatCB" SelectedIndex="0" HorizontalAlignment="Left" Margin="10,0,0,0" Width="100" Grid.Column="1">
+                    <ComboBoxItem>PNG</ComboBoxItem>
+                    <ComboBoxItem>JPG</ComboBoxItem>
+                    <ComboBoxItem>BMP</ComboBoxItem>
+                </ComboBox>
+
+            </Grid>
+            <CheckBox x:Name="TimeCB" IsChecked="True" Margin="5,10,0,0" Content="Отображать таблицу со временем"/>
+            <CheckBox x:Name="DocCB" IsChecked="True" Margin="5,10,0,0" Content="Отображать список документов"/>
+            <CheckBox x:Name="PropblemCB" IsChecked="True" Margin="5,10,0,0" Content="Отображать список проблем"/>
+
+            <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+                <Button Click="SaveClick" Height="25" Width="100" Content="Сохранить"/>
+                <Button Click="AbrortClick" Margin="10,0,0,0" Height="25" Width="100" Content="Отмена"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
