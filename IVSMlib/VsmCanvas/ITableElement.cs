@@ -8,6 +8,6 @@ namespace IVSMlib.VsmCanvas
 {
     public interface ITableElement
     {
-    //    void GetInst();
+
     }
 }

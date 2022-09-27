@@ -365,7 +365,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void MouseDown(Point e)
         {
-
         }
 
         public override void MouseUp(Point e)

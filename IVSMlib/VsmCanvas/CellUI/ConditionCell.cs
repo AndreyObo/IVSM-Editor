@@ -69,8 +69,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             ConditionPropsHolder.PropsList.Add(OrgamizationHolder);
 
-            //---------------------Conditions-------------------------
-
             StringProps ConditionAHolder = new StringProps();
 
             ConditionAHolder.PropsEditType = StringProps.EditType.Line;

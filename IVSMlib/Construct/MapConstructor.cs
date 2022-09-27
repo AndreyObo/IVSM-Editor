@@ -279,7 +279,6 @@ namespace IVSMlib.Construct
                     }
                     }
                 }
-            
         }
 
         public void DeleteItem()
@@ -324,7 +323,6 @@ namespace IVSMlib.Construct
                     {
                         if(SelectedItem == line.Left_Cell)
                         {
-                           // item.DisconnectLine(line);
                             ((IConnecting)line.Right_Cell).DisconnectLine(line);
                             Table.DeleteVisual(line);
                         }

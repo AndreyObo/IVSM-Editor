@@ -44,25 +44,6 @@ namespace IVSMlib.TableDom.MarkDom
                     problem.SetProblem(problem_item.value.ToString());
                 }
             }
-                //Node location = (Node)ui_node.FindeNode(Lexer.GetPropertyTag(Lexer.PropertyToken.Location));
-
-                //double x = Convert.ToDouble(location.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.X)));
-                //double y = Convert.ToDouble(location.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Y)));
-
-                //problem.SetLocation(x, y);
-
-                //Node szie = (Node)ui_node.FindeNode(Lexer.GetPropertyTag(Lexer.PropertyToken.Size));
-
-                //double widht = Convert.ToDouble(location.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Width)));
-                //double height = Convert.ToDouble(location.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Height)));
-
-                //problem.SetSize(widht, height);
-
-                //Node.NodeItem<object> item = (Node.NodeItem<object>)ui_node.FindeNode(Lexer.GetPropertyTag(Lexer.PropertyToken.Title));
-
-                //problem.SetProblem(item.value.ToString());
-
-                //      int i = 0;
                 return problem;
         }
 

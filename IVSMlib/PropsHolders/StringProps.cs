@@ -13,6 +13,7 @@ namespace IVSMlib.PropsHolders
     {
         public enum EditType { Line, MultiLine}
         public EditType PropsEditType;
+
         
         public string Title { get; set; }
 

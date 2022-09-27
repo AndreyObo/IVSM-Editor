@@ -9,7 +9,6 @@ namespace IVSMlib.PropsHolders
 {
     public class DateProps:Props
     {
-
         public string Title { get; set; }
 
         public delegate DateTime GetCurrentValue();

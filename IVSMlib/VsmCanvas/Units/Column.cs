@@ -13,7 +13,6 @@ namespace IVSMlib.VsmCanvas.Units
     {
         protected Brush DrawBrush;
         protected Boolean isActive;
-
         public Column PrevColumn { get; set; }
 
         public Column NextColumn { get; set; }

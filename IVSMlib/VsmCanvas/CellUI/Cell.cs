@@ -131,7 +131,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             res.CellResult = CellMouseResult.Result.CellClick;
             return res;
         }
-
        
         protected void InvokeEvent(Point e, CellMouseResult res)
         {

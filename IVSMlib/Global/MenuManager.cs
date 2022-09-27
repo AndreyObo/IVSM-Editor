@@ -28,8 +28,6 @@ namespace IVSMlib.Global
                 IsMenuShow = true;
                 MainMenuWindow.Show();
             }
-
-
         }
 
         public static void MouseDown()

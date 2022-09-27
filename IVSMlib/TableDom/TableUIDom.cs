@@ -11,7 +11,6 @@ namespace IVSMlib.TableDom
     public abstract class TableUIDom
     {
         public abstract Node CreateRootNode(TableUI table_ui);
-
         public abstract TableUI CreateInstanse(Node ui_node);
     }
 }

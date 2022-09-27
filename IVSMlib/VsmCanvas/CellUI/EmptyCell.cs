@@ -72,7 +72,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void MouseMove(Point e)
         {
-
         }
 
         public override void MouseLeave()

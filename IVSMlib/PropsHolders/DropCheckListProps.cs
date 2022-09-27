@@ -28,8 +28,7 @@ namespace IVSMlib.PropsHolders
         public OnCheck OnCheckDelegate;
 
         public override void GetNode(ref Node root)
-        {
-           
+        {     
         }
     }
 }

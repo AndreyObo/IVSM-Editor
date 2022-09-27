@@ -29,8 +29,6 @@ namespace IVSMlib.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //------------------------------------------------------
-
         private List<Item> CurrentItemList;
         private List<Item> CurrentVisualItemList;
 

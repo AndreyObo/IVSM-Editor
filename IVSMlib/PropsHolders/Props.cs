@@ -18,7 +18,6 @@ namespace IVSMlib.PropsHolders
         {
             Title = title;
         }
-
         public string GetTitle() => Title;
 
         public abstract void GetNode(ref Node root);

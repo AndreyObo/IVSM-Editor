@@ -186,7 +186,6 @@ namespace IVSMlib.VsmCanvas.MarksUI
             DrawUI();
         }
 
-
         public string GetBorderWidth()
         {
             return PenWidth.ToString();

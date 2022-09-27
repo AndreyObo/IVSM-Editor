@@ -60,8 +60,6 @@ namespace IVSMlib.VsmCanvas.Units
             {
                 FormattedText TitleText = new FormattedText(DocsLable, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 14, Brushes.Black);
 
-               
-
                 dc.DrawText(TitleText, TablePosition);
 
                

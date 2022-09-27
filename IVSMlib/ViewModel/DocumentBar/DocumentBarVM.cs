@@ -65,7 +65,6 @@ namespace IVSMlib.ViewModel
 
         private void add_doc()
         {
-
             int num = DocumentUnitList.Count;
 
             bool name_exist;

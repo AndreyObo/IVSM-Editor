@@ -36,7 +36,6 @@ namespace IVSMlib.Global
             color_index++;
         }
 
-
         public static List<MoveModel> MoveModelsStore = new List<MoveModel>();
         public static IVSM CurrentIVSM { get; set; }
         public static string CurrentFileName= NULL_FILE;

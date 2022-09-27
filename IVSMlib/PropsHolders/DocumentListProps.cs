@@ -26,7 +26,6 @@ namespace IVSMlib.PropsHolders
 
         public override void GetNode(ref Node root)
         {
-
         }
     }
 }

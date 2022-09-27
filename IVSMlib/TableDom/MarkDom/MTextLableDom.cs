@@ -116,7 +116,6 @@ namespace IVSMlib.TableDom.MarkDom
             loc_node.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Y), text.GetLocation().Y.ToString());
 
             text_node.AddNodeItem<Node>(Lexer.GetUITag(Lexer.UIToken.TextLable), loc_node);
-
             Node size_node = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.Size));
             size_node.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Width), text.GetSize().Width.ToString());
             size_node.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Height), text.GetSize().Height.ToString());

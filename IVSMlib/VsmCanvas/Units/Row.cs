@@ -103,7 +103,6 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseUp(Point e)
         {
-
         }
 
         public override void Select()

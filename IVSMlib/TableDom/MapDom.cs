@@ -56,8 +56,6 @@ namespace IVSMlib.TableDom
 
             manager.AddNode(row_definition);
 
-            //-----------------------ColumnDefinition--------------------------------------------
-
 
             Node column_definition = new Node(Lexer.GetMapTag(Lexer.MapToken.ColumnDefinition));
 

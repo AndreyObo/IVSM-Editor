@@ -217,7 +217,6 @@ namespace IVSMlib.VsmCanvas.MarksUI
             Location.Y = y;
 
             SizeButton.SetLocation(x + Size.Width, y + Size.Height);
-
             DrawUI();
         }
 

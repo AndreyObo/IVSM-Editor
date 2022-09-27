@@ -44,7 +44,6 @@ namespace IVSMlib.TableDom.MarkDom
                     decision.SetDecision(d_item.value.ToString());
                 }
             }
-
             return decision;
         }
 

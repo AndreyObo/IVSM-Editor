@@ -198,7 +198,6 @@ namespace IVSMlib.VsmCanvas.MarksUI
             }
             if (IsSelect)
             {
-
                 SizeButton.Draw(dc);
             }
             dc.Close();

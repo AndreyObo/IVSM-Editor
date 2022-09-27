@@ -46,7 +46,6 @@ namespace IVSMlib.Utils
                     CreateBMP(crop);
                     break;
             }
-
            
         }
 

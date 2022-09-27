@@ -2326,8 +2326,6 @@ namespace IVSMlib.ViewModel
             MapConstructorInstance.UnselectCell();
             UnselectTableUI();
         }
-
-
         public Time.Type GetActionAxisMeg() => TimeAxisUI.GetActionAxisMeg();
         public Time.Type GetWasteAxisMeg() => TimeAxisUI.GetWasteAxisMeg();
         public Time.Type GetMoveAxisMeg() => TimeAxisUI.GetMoveAxisMeg();

@@ -177,10 +177,6 @@ namespace IVSMlib.TableDom.CellDom
             condition_node.AddFeature(Lexer.GetMapTag(Lexer.MapToken.Row), cell.TableIndex.Row.ToString());
             condition_node.AddFeature(Lexer.GetMapTag(Lexer.MapToken.Column), cell.TableIndex.Column.ToString());
 
-          //  Node decorations = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.Decoration));
-           // decorations.AddNodeItem<string>(Lexer.GetPropertyTag(Lexer.PropertyToken.Fill), IVSMUtils.HexConverter(cell.GetCurrentColor()));
-
-      //      condition_node.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.Decoration), decorations);
 
             Node props_node = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.Props));
 
@@ -227,18 +223,6 @@ namespace IVSMlib.TableDom.CellDom
 
             props_node.AddNodeItem<string>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), cell.Get_C_Conditon(), c_case_feature);
 
-
-            //Node act_time_item = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem));
-            //act_time_item.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), ActionTime);
-            //act_time_item.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), TimeDom.GetNode(cell.GetActionTime()));
-
-            //props_node.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), act_time_item);
-
-            //Node wating_time_item = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem));
-            //wating_time_item.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), WatingTime);
-            //wating_time_item.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), TimeDom.GetNode(cell.GetWatingTime()));
-
-            //props_node.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), wating_time_item);
 
             List<Node.NodeFeature> act_time_feature = new List<Node.NodeFeature>();
             act_time_feature.Add(new Node.NodeFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), ActionTime));

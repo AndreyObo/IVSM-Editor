@@ -246,7 +246,6 @@ namespace IVSMlib.ViewModel
 
         private void SwitchClick(bool IsEdit)
         {
-          //  edit_m = value;
             if(SwicthBlock)
             {
                 SwicthBlock = false;
@@ -360,7 +359,6 @@ namespace IVSMlib.ViewModel
 
         private void RedirectLineClick()
         {
-
         }
 
         private void AlightColumnClick()
@@ -408,7 +406,6 @@ namespace IVSMlib.ViewModel
         private void ColorButtonClick()
         {
             EditMode = false;
-            Console.WriteLine("Color clik");
         }
 
     }

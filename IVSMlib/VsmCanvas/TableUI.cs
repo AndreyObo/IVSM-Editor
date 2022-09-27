@@ -10,7 +10,6 @@ namespace IVSMlib.VsmCanvas
 {
     public abstract class TableUI : DrawingVisual
     {
-
        public abstract void MouseEnter();
        public abstract void MouseMove(Point e);
        public abstract void MouseLeave();

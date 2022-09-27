@@ -10,7 +10,6 @@ namespace IVSMlib.VsmCanvas.MarksUI
 {
     public abstract class Mark : TableUI
     {
-
         protected Point Location;
 
         protected Size Size;

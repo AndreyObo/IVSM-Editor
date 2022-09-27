@@ -830,7 +830,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             return e_lines;
         }
-
         public Node CreateDomNode()
         {
             return ActionDom.Get().CreateRootNode(this);

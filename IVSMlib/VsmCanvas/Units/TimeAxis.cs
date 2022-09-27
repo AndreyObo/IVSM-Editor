@@ -128,7 +128,6 @@ namespace IVSMlib.VsmCanvas.Units
             }
             int p = 0;
 
-        //    DrawUI();
         }
             
 

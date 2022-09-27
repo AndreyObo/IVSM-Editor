@@ -76,7 +76,6 @@ namespace IVSMlib.VsmCanvas.Units
             DrawBrush = ButtonBrush;
         }
             
-
         public void Draw(DrawingContext dc)
         {
             dc.DrawRectangle(DrawBrush, new Pen(Brushes.Transparent, 1), new Rect(Location.X, Location.Y, size.Width, size.Height));

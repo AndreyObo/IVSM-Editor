@@ -76,8 +76,6 @@ namespace IVSMlib.VsmCanvas.LineUI
 
             MovePropsHolder.PropsList.Add(OrgamizationHolder);
 
-
-
             TimeProps tm = new TimeProps();
             tm.Title = "Время перемещения";
             tm.GetCurrentValueDelegate = GetMoveTime;

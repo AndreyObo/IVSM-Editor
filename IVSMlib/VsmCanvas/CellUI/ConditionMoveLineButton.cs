@@ -9,6 +9,5 @@ namespace IVSMlib.VsmCanvas.CellUI
 {
     public class ConditionMoveLineButton: VisualButton
     {
-
     }
 }

@@ -78,12 +78,9 @@ namespace IVSMlib.TableDom.CellDom
 
             Node props = (Node)ui_node.FindeNode(Lexer.GetPropertyTag(Lexer.PropertyToken.Props));
 
-            //  Node act_time = props.FindeNode(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem));
 
             foreach (Node.NodeItem<object> props_item in props.GetNodes())
             {
-                //Console.WriteLine(props_item.name);
-                //Console.WriteLine(props_item.value.ToString());
                 if (props_item.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name)) == ActionProps)
                 {
                     action_cell.SetActName((string)props_item.value);
@@ -102,14 +99,6 @@ namespace IVSMlib.TableDom.CellDom
                 {
                     action_cell.SetComment((string)props_item.value);
                 }
-                //if (props_item.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name)) == ActionTime)
-                //{
-                //    action_cell.SetActionTime(TimeDom.ParseTime((Node)props_item.value));
-                //}
-                //if (props_item.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name)) == WatingTime)
-                //{
-                //    action_cell.SetWatingTime(TimeDom.ParseTime((Node)props_item.value));
-                //}
 
             }
 
@@ -302,8 +291,6 @@ namespace IVSMlib.TableDom.CellDom
 
             props_node.AddNodeItem<string>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), cell.GetActName(), name_feature);
 
-            //List<Node.NodeFeature> time_feature = new List<Node.NodeFeature>();
-            // time_feature.Add(new Node.NodeFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), ActionTime));
 
             List<Node.NodeFeature> act_time_feature = new List<Node.NodeFeature>();
             act_time_feature.Add(new Node.NodeFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), ActionTime));
@@ -314,17 +301,6 @@ namespace IVSMlib.TableDom.CellDom
             waste_time_feature.Add(new Node.NodeFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), WatingTime));
 
             props_node.AddNodeItem<string>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), TimeDom.CodeTime(cell.GetWatingTime()), waste_time_feature);
-            //Node act_time_item = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem));
-            //act_time_item.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), ActionTime);
-            //act_time_item.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), TimeDom.GetNode(cell.GetActionTime()));
-
-            //props_node.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), act_time_item);
-
-            //Node wating_time_item = new Node(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem));
-            //wating_time_item.AddFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), WatingTime);
-            //wating_time_item.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), TimeDom.GetNode(cell.GetWatingTime()));
-
-            //props_node.AddNodeItem<Node>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), wating_time_item);
 
 
 

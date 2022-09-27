@@ -11,7 +11,6 @@ namespace IVSMlib.VsmCanvas
 {
     public class VsmCustomCanvas:Canvas
     {
-
         private List<DrawingVisual> visuals = new List<DrawingVisual>();
 
         protected override Visual GetVisualChild(int index)

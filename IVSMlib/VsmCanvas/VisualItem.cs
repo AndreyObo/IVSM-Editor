@@ -9,5 +9,6 @@ namespace IVSMlib.VsmCanvas
 {
     public class VisualItem : DrawingVisual
     {
+
     }
 }

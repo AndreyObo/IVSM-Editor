@@ -21,8 +21,6 @@ namespace IVSMlib.VsmCanvas.Units
         private List<VisualButton> Buttons = new List<VisualButton>();
         private VisualButton SelectedButton;
 
-
-
         public delegate void InsertButton(Int32 from, Int32 to);
         public event InsertButton InsertButtonClick;
 

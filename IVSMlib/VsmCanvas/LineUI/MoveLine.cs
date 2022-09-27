@@ -13,7 +13,6 @@ namespace IVSMlib.VsmCanvas.LineUI
     {
         private Point StartPoint;
         private Point EndPoint;
-
         private Pen LinePen;
 
         private Brush DrawBrush;

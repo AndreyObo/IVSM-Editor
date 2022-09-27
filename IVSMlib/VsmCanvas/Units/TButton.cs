@@ -76,7 +76,6 @@ namespace IVSMlib.VsmCanvas.Units
         public override void DrawUI()
         {
             DrawingContext dc = this.RenderOpen();
-
             if (IsVisible)
             {
                 dc.DrawRectangle(DrawBrush, DrawPen, new Rect(Location.X, Location.Y, this.size.Width, this.size.Height));
