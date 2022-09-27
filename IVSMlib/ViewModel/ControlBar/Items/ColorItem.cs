@@ -78,15 +78,14 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
             for (int i = 0; i <= GlobalStore.LastColors.Length - 1; i++)
             {
-                //OleColors[i] = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.FromArgb(GlobalStore.LastColors[i].A, GlobalStore.LastColors[i].R,
-                //    GlobalStore.LastColors[i].G, GlobalStore.LastColors[i].B));
+               
                 OleColors[i] = System.Drawing.ColorTranslator.ToOle(GlobalStore.LastColors[i]);
             }
 
             System.Drawing.Color cur_color = System.Drawing.Color.FromArgb(Props.GetCurrentColorDelegate().A, Props.GetCurrentColorDelegate().R, Props.GetCurrentColorDelegate().G, Props.GetCurrentColorDelegate().B);
 
             OleColors[GlobalStore.LastColors.Length] = System.Drawing.ColorTranslator.ToOle(cur_color);
-            //    GlobalStore.LastColors[i].G, GlobalStore.LastColors[i].B));
+           
 
             dlg.CustomColors = OleColors;
 
@@ -103,8 +102,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
             Props = (ColorProps)props;
             ItemLable.Text = Props.GetTitle();
             rect.Fill =  new SolidColorBrush(Props.GetCurrentColorDelegate());
-        //    ColorButton.Content = rect;
-        //    ColorButton.Background = 
             
         }
 
@@ -131,7 +128,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
         public override void SetWidth(double widht)
         {
             ItemLable.Width = widht - SideMargin * 2;
-          //  ColorButton.Width = widht - SideMargin * 2;
             rect.Width = widht - SideMargin * 2;
             Separatior.X2 = widht;
         }

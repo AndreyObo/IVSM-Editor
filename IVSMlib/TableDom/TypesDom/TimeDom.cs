@@ -31,7 +31,6 @@ namespace IVSMlib.TableDom.TypesDom
             count += 1;
             meg_s = time.Substring(count, time.Length - count);
 
-            //    Console.WriteLine(count_s + " ------------->>>>>> " + meg_s);
             Time time_t = new Time();
             time_t.Count = Convert.ToDouble(count_s);
 
@@ -75,8 +74,6 @@ namespace IVSMlib.TableDom.TypesDom
                 }
                 if (time_item.name == Lexer.GetPropertyTag(Lexer.PropertyToken.Measure))
                 {
-                    //string minute = Time.Type.Minute.ToString();
-                    //string seconds = Time.Type.Second.ToString();
 
                     if ((string)time_item.value == Time.Type.Day.ToString())
                     {

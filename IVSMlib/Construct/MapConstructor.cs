@@ -115,21 +115,6 @@ namespace IVSMlib.Construct
                 }
                 element.MouseDown(e);
             }
-            //if (element != null)
-            //{
-            //    if (CurrentMode == Mode.Edit)
-            //    {
-            //        element.MouseDown(e);
-            //    }
-            //    if(CurrentMode == Mode.View && element is EmptyCell)
-            //    {
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        element.MouseDown(e);
-            //    }
-            //}
         }
 
         public void MouseMoveEvent(Point e)
@@ -154,7 +139,6 @@ namespace IVSMlib.Construct
 
                     PlayerCell player_cell = new PlayerCell();
 
-             //       player_cell.player_model = new Player();
                       Table.AddCell(player_cell, sender.TableIndex.Row, sender.TableIndex.Column);
                 }
                 else
@@ -168,17 +152,14 @@ namespace IVSMlib.Construct
                     {
                         ActionCell action_cell = new ActionCell();
                         AttachEventActonCell(ref action_cell);
-                        //action_cell.MouseDownEvent += ActionCellMouseDown;
-                        //action_cell.MoveButtonClickEvent += ActionCellMoveButtomClick;
-                        //action_cell.UpdateTimeCallbak = UpdateTimeAxis;
+
                         Table.AddCell(action_cell, sender.TableIndex.Row, sender.TableIndex.Column);
                     }
                     else
                     {
                         ConditionCell condition_cell = new ConditionCell();
                         AttachEventConditionCell(ref condition_cell);
-                        //condition_cell.MoveButtonClickEvent += ConditionCellMoveButtonClick;
-                        //condition_cell.MouseDownEvent += ConditionCellMouseDown;
+
                         Table.AddCell(condition_cell, sender.TableIndex.Row, sender.TableIndex.Column);
                     }
                 }
@@ -214,23 +195,14 @@ namespace IVSMlib.Construct
            
             if (CurreantAction == Actions.CreatePathLine)
             {
-              //  if (CreateMoveLineAction.CreateToConditionLine(sender, arg))
-              //  {
-                    //   HideNeibMoveBtn(CreateMoveLineAction.FirstCell);
-                    //sender.DrawUI();
-                    //CreateMoveLineAction.CloseEdit();
-                    //CurreantAction = Actions.None;
-                    //CreateMoveLineAction.Clear();
                     if (CreatePathMoveAction.CreateLine(sender, arg))
                     {
 
                         CurreantAction = Actions.None;
                         CreatePathMoveAction.CloseEdit();
-                        // HideNeibMoveBtn(CreateMoveLineAction.FirstCell);
                         sender.DrawUI();
                     }
 
-             //   }
             }
             else
             {
@@ -239,38 +211,18 @@ namespace IVSMlib.Construct
                     CreatePathMoveAction.FirstCell = sender;
                     CreatePathMoveAction.FirstArg = arg;
                     CreatePathMoveAction.OpenEdit();
-                  //  ShowAll(sender);
-                     //   PathLine line = new PathLine();
-                     //  CreatePathMoveAction.InsertLine = line;
-                     //  arg.AddLineHandler(line);
-                     //   Table.AddUI(line);
-                     CurreantAction = Actions.CreatePathLine;
+                    CurreantAction = Actions.CreatePathLine;
                 }
             }
         }
 
         public void ActionCellMoveButtomClick(ActionCell sender, MoveButtonArg arg)
         {
-            //  Console.WriteLine(arg.StartPoint.ToString());
-          //  Console.WriteLine("clikkkk");
             if (CurreantAction == Actions.None)
             {
 
                 CreateMoveLineAction.FirstCell = sender;
-                //CreateMoveLineAction.FirstArg = arg;
-                //CreateMoveLineAction.OpenEdit();
 
-                //sender.DrawUI();
-
-                //if (arg.ButtinIndex.Side == MoveLineButton.Side.E)
-                //{
-                //    CreateMoveLineAction.InsertLineType = CreateSimpleLineAction.LineType.Start;
-                //}
-                //else
-                //{
-                //    CreateMoveLineAction.InsertLineType = CreateSimpleLineAction.LineType.End;
-                //}
-                //CurreantAction = Actions.CreateMoveLine;
                 CreatePathMoveAction.FirstCell = sender;
                 CreatePathMoveAction.FirstArg = arg;
                 CreatePathMoveAction.OpenEdit();
@@ -279,38 +231,19 @@ namespace IVSMlib.Construct
                 return;
             }
 
-            //if(CurreantAction == Actions.CreateMoveLine)
-            //{
-              
-            //    if (CreateMoveLineAction.CreatedToActionLine(sender, arg))
-            //    {
-            //        CreateMoveLineAction.CloseEdit();
-            //  //      HideNeibMoveBtn(CreateMoveLineAction.FirstCell);
-            //        sender.DrawUI();
-            //        CurreantAction = Actions.None;
-            //        CreateMoveLineAction.Clear();
-
-            //    }
-           
-            //}
-         //   Console.WriteLine("hfghgfh");
             if(CurreantAction == Actions.CreatePathLine)
             {
-              //  Console.WriteLine("inside");
+
                 if (CreatePathMoveAction.CreateLine(sender,arg))
                 {
                     
                     CurreantAction = Actions.None;
                     CreatePathMoveAction.CloseEdit();
-                   // HideNeibMoveBtn(CreateMoveLineAction.FirstCell);
+
                     sender.DrawUI();
                 }
             }
             
-            //if(CurreantAction == Actions.RedirectLine)
-            //{
-                
-            //}
         }
 
         public void SetMode(Mode _mode)
@@ -347,7 +280,6 @@ namespace IVSMlib.Construct
                     }
                 }
             
-           // if()
         }
 
         public void DeleteItem()
@@ -377,15 +309,7 @@ namespace IVSMlib.Construct
 
             Table.DeleteVisual(del_line);
 
-            //Int16 count = 0;
-            //foreach(Line line in Table.MapLines)
-            //{
-            //    if (line.Id == del_line.Id) break;
-            //    count++;
-            //}
-
             Table.MapLines.Remove(del_line);
-            //Console.WriteLine(count.ToString());
 
             SelectedItem = null; 
         }
@@ -430,7 +354,6 @@ namespace IVSMlib.Construct
                     {
                         if (Table.RowColumn[row][col] == line.Left_Cell)
                         {
-                            // item.DisconnectLine(line);
                             ((IConnecting)line.Right_Cell).DisconnectLine(line);
                             Table.DeleteVisual(line);
                         }
@@ -505,8 +428,6 @@ namespace IVSMlib.Construct
 
         private bool CheckNeibCell(Int32 col_one, Int32 col_two)
         {
-            Console.WriteLine("First Cell coll - " + col_one.ToString());
-            Console.WriteLine("Second Cell coll - " + col_two.ToString());
 
             if (col_one +1 == col_two)
             {
@@ -522,8 +443,6 @@ namespace IVSMlib.Construct
         public void UpdateAxisMoveTime(Int32 col_one, Int32 col_two)
         {
 
-     //       Console.WriteLine(CheckNeibCell(col_one, col_two).ToString());
-
             if(CheckNeibCell(col_one, col_two)==false)
             {
                 return;
@@ -535,7 +454,6 @@ namespace IVSMlib.Construct
             {
                 if (Table.RowColumn[row][col_one] is IConnecting cell)
                 {
-                   // Console.WriteLine("Lines cout --- "+cell.GetAll_E_Lines().Count().ToString());
 
                     foreach (Line line in cell.GetAll_E_Lines())
                     {
@@ -562,9 +480,6 @@ namespace IVSMlib.Construct
 
 
             Table.TimeAxisUI.SetMoveTime(max_move_time, col_one - 1, col_two);
-
-            //  Console.WriteLine("First Cell coll - " + col_one.ToString());
-            // Console.WriteLine("Second Cell coll - " + col_two.ToString());
         }
 
         public void UnselectCell()
@@ -579,7 +494,7 @@ namespace IVSMlib.Construct
 
         public void RediectLine()
         {
-           // CurreantAction = Actions.RedirectLine;
+
         }
 
         public void SetColor(Color c)
@@ -606,48 +521,5 @@ namespace IVSMlib.Construct
                 }
             }
         }
-
-        //private void ShowNeibMoveBtn(Cell cell)
-        //{
-        //    Int32 Column = cell.TableIndex.Column;
-
-        //    for (Int32 row = 0; row <= Table.RowColumn.Count - 1; row++)
-        //    {
-        //        if (Table.RowColumn[row][Column + 1] is IConnecting connectElement)
-        //        {
-        //            connectElement.ActiveConnectButton();
-        //        }
-        //    }
-        //}
-
-        //private void ShowAll(Cell cell)
-        //{
-        //    Int32 Column = cell.TableIndex.Column;
-
-        //    for (Int32 row = 0; row <= Table.RowColumn.Count - 1; row++)
-        //    {
-        //        for (int c = Column+1; c <= Table.RowColumn[0].Count - 1; c++)
-        //        {
-        //            if (Table.RowColumn[row][c] is IConnecting connectElement)
-        //            {
-        //                connectElement.ActiveConnectButton();
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private void HideNeibMoveBtn(Cell cell)
-        //{
-        //    Int32 Column = cell.TableIndex.Column;
-
-        //    for (Int32 row = 0; row <= Table.RowColumn.Count - 1; row++)
-        //    {
-
-        //        if (Table.RowColumn[row][Column + 1] is IConnecting connectElement)
-        //        {
-        //            connectElement.DisableConnectButton();
-        //        }
-        //    }
-        //}
     }
 }

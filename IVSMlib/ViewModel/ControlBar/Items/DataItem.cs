@@ -26,7 +26,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
         private void DateChange(object sender, SelectionChangedEventArgs e)
         {
-            //      MessageBox.Show(((TextBox)sender).Text);
         
             Props.SetPropertyDelegate(new DateTime(((DatePicker)sender).SelectedDate.Value.Year, ((DatePicker)sender).SelectedDate.Value.Month, ((DatePicker)sender).SelectedDate.Value.Day));
         }

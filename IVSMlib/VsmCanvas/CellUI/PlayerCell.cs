@@ -61,8 +61,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             PlayerPropsHolder.GetLableCallback = GetLable;
             PlayerPropsHolder.SetLableCallback = SetLable;
 
-            //   PropsHolders = new List<Props>();
-
             StringProps OrgamizationHolder = new StringProps();
 
             OrgamizationHolder.PropsEditType = StringProps.EditType.Line;
@@ -70,19 +68,15 @@ namespace IVSMlib.VsmCanvas.CellUI
             OrgamizationHolder.GetCurrentValueDelegate = GetOrgName;
             OrgamizationHolder.SetPropertyDelegate = SetOrgName;
             OrgamizationHolder.Name = "Organization";
-            //      OrgamizationHolder.StringType = StringProps.Type.Line;
 
             PlayerPropsHolder.PropsList.Add(OrgamizationHolder);
-            // PropsHolders.Add(OrgamizationHolder);
 
             StringProps DepartmentHolder = new StringProps();
             DepartmentHolder.PropsEditType = StringProps.EditType.Line;
             DepartmentHolder.Title = "Подразделение";
             DepartmentHolder.GetCurrentValueDelegate = GetDepName;
             DepartmentHolder.SetPropertyDelegate = SetDepName;
-            //  DepartmentHolder.StringType = StringProps.Type.Text;
 
-            //       PropsHolders.Add(DepartmentHolder);
             PlayerPropsHolder.PropsList.Add(DepartmentHolder);
 
             StringProps Comment = new StringProps();
@@ -92,15 +86,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             Comment.SetPropertyDelegate = SetComment;
 
             PlayerPropsHolder.PropsList.Add(Comment);
-
-            //TimeProps tm = new TimeProps();
-            //tm.Title = "Время ожидания";
-            //tm.GetCurrentValueDelegate = GetTime;
-            //tm.SetPropertyDelegate = SetTime;
-
-            //PlayerPropsHolder.PropsList.Add(tm);
-
-            //--------visual-----------------
 
             ColorProps cp = new ColorProps();
 
@@ -145,7 +130,7 @@ namespace IVSMlib.VsmCanvas.CellUI
             {
                 IsBorderTransparant = false;
             }
-            //DrawBrush = new SolidColorBrush(c);
+
             BorderPen = new Pen(new SolidColorBrush(c), BorderSize);
             DrawUI();
         }
@@ -209,16 +194,11 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         //--------------------------------------------------------------------
 
-    //    public List<Props> PropsHolders { get; set; }
-
         public PropsHolder PlayerPropsHolder { get; set; }
 
         //-------------------debug time----------------------------
         private Time bd_time;
 
-      //  private Time GetTime() => bd_time;
-     //   private void SetTime(Time time) => bd_time = time;
-        //----------------------------------------------
 
         private string Lable;
 
@@ -269,12 +249,10 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             FormantCellText = new FormattedText(" ", CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), cur_font_size, Brushes.Black);
 
-            //    UpdateFormatCellText();
         }
 
         private void DecFontSize(ref FormattedText formattedText)
         {
-       //     Console.WriteLine("text width --->" + formattedText.Width.ToString());
             while (formattedText.Height >= (size.Height - (CellMargin.Top * 2)) - 5)
             {
                 cur_font_size -= 2;
@@ -311,8 +289,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             FormantCellText.MaxTextWidth = size.Width - (CellMargin.Left * 2);
 
-            // formattedText.MaxTextHeight = (size.Height - (CellMargin.Top * 2)) - 5;
-
             FormantCellText.TextAlignment = TextAlignment.Center;
 
             if (FormantCellText.Height > size.Height - 10)
@@ -323,10 +299,7 @@ namespace IVSMlib.VsmCanvas.CellUI
             {
                 IncFontSize(ref FormantCellText);
             }
-            //if (FormantCellText.Width > size.Width - 10)
-            //{
-            //    DecFontSizeWidth(ref FormantCellText);
-            //}
+
         }
 
         public override void DrawUI()
@@ -335,7 +308,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             dc.DrawRoundedRectangle(DrawBrush, new Pen(Brushes.Transparent, 1), new Rect(Loc.X + CellMargin.Left, Loc.Y + CellMargin.Top, this.size.Width - CellMargin.Left*2, this.size.Height - CellMargin.Top*2), 10, 10);
             
-         //   dc.DrawRectangle(Brushes.Transparent, BorderPen, new Rect(Loc.X + CellMargin.Left, Loc.Y + CellMargin.Top, this.size.Width - CellMargin.Left * 2, this.size.Height - CellMargin.Top * 2));
 
 
             if (IsSelect)
@@ -347,25 +319,7 @@ namespace IVSMlib.VsmCanvas.CellUI
                 dc.DrawRectangle(Brushes.Transparent, FocusPen, new Rect(Loc.X + CellMargin.Left - 2, Loc.Y + CellMargin.Top - 2, (this.size.Width - CellMargin.Left * 2) + 4, (this.size.Height - CellMargin.Top * 2) + 4));
             }
 
-            // FormattedText formattedText = new FormattedText(Lable, CultureInfo.GetCultureInfo("en-us"),  FlowDirection.LeftToRight,new Typeface("Verdana"), cur_font_size, Brushes.Black);
-
-
-
-            // formattedText.MaxTextWidth = size.Width - (CellMargin.Left * 2);
-
-            //// formattedText.MaxTextHeight = (size.Height - (CellMargin.Top * 2)) - 5;
-
-            // formattedText.TextAlignment = TextAlignment.Center;
-
-            // if (formattedText.Height > size.Height - 10)
-            // {
-            //     DecFontSize(ref formattedText);
-            // }
-            // if (formattedText.Height < size.Height - 10)
-            // {
-            //     IncFontSize(ref formattedText);
-            // }
-
+         
             double l_y = ((size.Height-(CellMargin.Top*2)) / 2 - FormantCellText.Height / 2);
 
             dc.DrawText(FormantCellText, new Point(Loc.X + CellMargin.Left, Loc.Y + CellMargin.Top+ l_y));
@@ -375,16 +329,12 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void Select()
         {
-            //DrawBrush = SelectedBrush;
-            //DrawUI();
             base.IsSelect = true;
             IsMouseEnter = false;
         }
 
         public override void Unselect()
         {
-            //DrawBrush = BackgoundBrush;
-            //DrawUI();
             base.IsSelect = false;
         }
 
@@ -392,7 +342,6 @@ namespace IVSMlib.VsmCanvas.CellUI
         {
             if (IsSelect == false)
             {
-                //  DrawBrush = FocusedBrush;
                 IsMouseEnter = true;
                 DrawUI();
 
@@ -408,7 +357,6 @@ namespace IVSMlib.VsmCanvas.CellUI
         {
             if (IsSelect == false)
             {
-                //  DrawBrush = FocusedBrush;
                 IsMouseEnter = false;
                 DrawUI();
 
@@ -417,12 +365,12 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void MouseDown(Point e)
         {
-         //   throw new NotImplementedException();
+
         }
 
         public override void MouseUp(Point e)
         {
-           // throw new NotImplementedException();
+
         }
 
         public override void SetLocation(double x, double y)

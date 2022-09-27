@@ -11,11 +11,6 @@ namespace IVSMlib.VsmCanvas
 {
     public class VsmCustomCanvas:Canvas
     {
-        //public VsmCustomCanvas()
-        //{
-        //    Console.WriteLine("Canvas is created!!!!!!!!!!!!");
-        //}
-
 
         private List<DrawingVisual> visuals = new List<DrawingVisual>();
 

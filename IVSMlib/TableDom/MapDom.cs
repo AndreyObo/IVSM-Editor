@@ -43,7 +43,7 @@ namespace IVSMlib.TableDom
             manager.OpenBlock(Lexer.GetMapTag(Lexer.MapToken.Table), fatures);
 
 
-           // manager.OpenBlock(Lexer.GetMapTag(Lexer.MapToken.RowDefinition));
+          
 
             //-----------------------RowDefinition--------------------------------
 
@@ -68,7 +68,7 @@ namespace IVSMlib.TableDom
 
             manager.AddNode(column_definition);
 
-            //   manager.CloseBlock();
+            
             if (table_vm.IsEmptyTable() == false)
             {
                 manager.OpenBlock(Lexer.GetMapTag(Lexer.MapToken.Cells));
@@ -188,15 +188,6 @@ namespace IVSMlib.TableDom
             table_vm.CreateNewTable(rows_height, col_width, table_width, table_height);
             DocConnector.CurrentDocList.Clear();
 
-            //Node doc_node = (Node)table_n.FindeNode(Lexer.GetMapTag(Lexer.MapToken.Documents));
-
-            //foreach(Node.NodeItem<object> doc_item in doc_node.GetNodes())
-            //{
-            //    if(doc_item.name == Lexer.GetUITag(Lexer.UIToken.Document))
-            //    {
-
-            //    }
-            //}
 
             ActionLineLinks.Clear();
             ConditionLineLinks.Clear();
@@ -264,13 +255,8 @@ namespace IVSMlib.TableDom
                     CreateMarks(table_vm, (Node)mark_node.value);
                 }
             }
-            //    CreateDocuments((Node)table_n.FindeNode(Lexer.GetMapTag(Lexer.MapToken.Documents)), table_vm);
+            
 
-            //foreach (Node.NodeItem<object> item in root.GetNodes())
-            //{
-            //    Lexer.MapToken token = Lexer.MapTokens.FirstOrDefault(x => x.Value == item.name).Key;
-            //    Console.WriteLine(token.ToString());
-            //}
             IVSM ivsm = new IVSM();
 
             ivsm.SetCurrentDocId(GetNextDocId());
@@ -278,8 +264,7 @@ namespace IVSMlib.TableDom
             ivsm.MapName = map_name;
 
             GlobalStore.CurrentIVSM = ivsm;
-         //   List<Cell> l = table_vm.RowColumn[0];
-         //   int i = 0;
+         
         }
 
         private static void CreateMarks(MainTableVM table_v, Node marks)
@@ -366,16 +351,7 @@ namespace IVSMlib.TableDom
                         break;
                     }
                 }
-                //for (int i = 0; i <= table_v.MapLines.Count() - 1; i++)
-                //{
-                //    if (i == cell_link.line_id)
-                //    {
-                //        line = table_v.MapLines[i];
-                //        break;
-                //    }
-                //}
-
-             //   Console.WriteLine(line.ToString());
+               
 
                 if (line != null)
                 {
@@ -434,7 +410,7 @@ namespace IVSMlib.TableDom
                 line.DrawUI();
             }
 
-          //  int iii =0;
+          
 
             ActionLineLinks.Clear();
         }
@@ -445,15 +421,7 @@ namespace IVSMlib.TableDom
             {
 
                 Line line = null;
-                //for (int i = 0; i <= table_v.MapLines.Count()-1; i++)
-                //{
-                //    if (i == cell_link.line_id)
-                //    {
-                //        line = table_v.MapLines[i];
-                //        break;
-                //    }
-                //}
-                //     int ree = 0;
+               
 
                 foreach (Line map_line in table_v.MapLines)
                 {
@@ -527,47 +495,6 @@ namespace IVSMlib.TableDom
             return null;
         }
 
-        //private static void CreateDocuments(Node doc_node, MainTableVM table_vm)
-        //{
-        //    Int32 doc_id = Convert.ToInt32(doc_node.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Id)));
-
-        //    foreach(Node.NodeItem<object> doc_item in doc_node.GetNodes())
-        //    {
-        //        DocumentUnit document = new DocumentUnit();
-
-        //        if (doc_item.name == Lexer.GetPropertyTag(Lexer.PropertyToken.Decoration))
-        //        {
-        //            Node decoration = (Node)doc_item.value;
-
-        //            foreach(Node.NodeItem<object> items in decoration.GetNodes())
-        //            {
-        //                if(items.name == Lexer.GetPropertyTag(Lexer.PropertyToken.Fill))
-        //                {
-        //                    System.Drawing.Color color =ColorTranslator.FromHtml((string)items.value);
-        //                    System.Windows.Media.Color newColor = System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B);
-        //                    document.SetColor(newColor);
-        //                }
-        //            }
-                    
-        //        }
-
-        //        //----------------------Props-----------------------------------------
-
-        //        if (doc_item.name == Lexer.GetPropertyTag(Lexer.PropertyToken.Props))
-        //        {
-        //            Node decoration = (Node)doc_item.value;
-
-        //            foreach (Node.NodeItem<object> items in decoration.GetNodes())
-        //            {
-        //                if (items.name == Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem))
-        //                {
-        //                   if(items.GetFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name))=="")
-        //                }
-        //            }
-
-        //        }
-
-        //    }
-        //}
+       
     }
 }

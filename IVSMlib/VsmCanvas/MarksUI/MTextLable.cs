@@ -342,8 +342,6 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
             CreatePropertyHolders();
 
-            //UpdateFormatCellText();
-            //  CurrentAlignment = TextAlignment.Left;
             FontFamily = "Verdana";
             FormantLableText = new FormattedText(Text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface(FontFamily), TextFontSize, TextBrush);
 
@@ -359,28 +357,17 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
         public override void MouseDown(Point e)
         {
-            //if(SizeButton.CheckHit(e))
-            //{
-            //    MessageBox.Show("fdfdf");
-            //}
+
         }
 
         public override void MouseEnter()
         {
-            //if (IsSelect == false)
-            //{
-            //    DrawBrush = FocusedBrush;
-            //    DrawUI();
-            //}
+
         }
 
         public override void MouseLeave()
         {
-            //if (IsSelect == false)
-            //{
-            //    DrawBrush = FillBrush;
-            //    DrawUI();
-            //}
+
         }
 
         public override void MouseMove(Point e)
@@ -406,19 +393,17 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
         public override void MouseUp(Point e)
         {
-            //  throw new NotImplementedException();
+
         }
 
         public override void Select()
         {
-        //    DrawBrush = SelectBrush;
             IsSelect = true;
             DrawUI();
         }
 
         public override void Unselect()
         {
-         //   DrawBrush = FillBrush;
             IsSelect = false;
             DrawUI();
         }
@@ -435,10 +420,8 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
             if(IsSelect)
             {
-                //  dc.DrawRectangle(SizeMarkBrush, new Pen(BorderBrush, 0), new Rect((Location.X + Size.Width / 2)-4, Location.Y - 35, 8, 30));
                 dc.DrawRoundedRectangle(Brushes.Transparent, SelectPen, new Rect(Location.X-3, Location.Y-3, Size.Width+6, Size.Height+6), 1, 1);
                 SizeButton.Draw(dc);
-                // dc.DrawRectangle(SizeMarkBrush, new Pen(BorderBrush, 0), new Rect((Location.X + Size.Width / 2) - 4, Location.Y - 35, 8, 30));
             }
 
             dc.Close();

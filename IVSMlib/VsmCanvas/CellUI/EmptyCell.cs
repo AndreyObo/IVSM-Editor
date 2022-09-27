@@ -15,15 +15,12 @@ namespace IVSMlib.VsmCanvas.CellUI
         public delegate void MouseDownType(Cell sender);
         public event MouseDownType MouseDownEvent;
 
-        //  public bool IsDisable;
-
         private bool IsDisable;
 
         public EmptyCell()
         {
             Loc.X = 0;
             Loc.Y = 0;
-        //    CellBrush = Brushes.Red;
             size.Width = 50;
             size.Height = 50;
             BackgoundBrush = new SolidColorBrush(Colors.White);
@@ -41,19 +38,7 @@ namespace IVSMlib.VsmCanvas.CellUI
         {
             DrawingContext dc = this.RenderOpen();
 
-          //  dc.PushOpacity(0.4);
-
             dc.DrawRectangle(DrawBrush, new Pen(Brushes.Transparent, 1), new Rect(Loc.X, Loc.Y, this.size.Width, this.size.Height));
-
-       //     FormattedText formattedText = new FormattedText(
-       //"Empty",
-       //CultureInfo.GetCultureInfo("en-us"),
-       //FlowDirection.LeftToRight,
-       //new Typeface("Verdana"),
-       //14,
-       //Brushes.Black);
-       //     dc.DrawText(formattedText, new Point(Loc.X + 5, Loc.Y + 5));
-
 
             dc.Close();
         }

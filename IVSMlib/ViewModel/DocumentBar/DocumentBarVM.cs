@@ -60,15 +60,6 @@ namespace IVSMlib.ViewModel
 
             DocumentUnitList = new ObservableCollection<DocumentUnit>();
 
-            //for (int i = 1; i <=3; i++)
-            //{
-            //    string s = "Документ_" + i.ToString();
-            //    DocumentUnitList.Add(new DocumentUnit(s));
-            //}
-           
-        //    DocumentUnitList.Add(new DocumentUnit());
-          //  DocumentUnitList.Add(new DocumentUnit());
-
             DocConnector.CurrentDocList = DocumentUnitList;
         }
 

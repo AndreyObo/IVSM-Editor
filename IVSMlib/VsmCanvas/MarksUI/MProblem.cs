@@ -58,16 +58,12 @@ namespace IVSMlib.VsmCanvas.MarksUI
             ProblemPropsHolder = new PropsHolder();
             ProblemPropsHolder.OwnerType = PropsHolder.Type.Problem;
 
-
-            //   PropsHolders = new List<Props>();
-
             StringProps ProblemDescribe = new StringProps();
 
             ProblemDescribe.PropsEditType = StringProps.EditType.MultiLine;
             ProblemDescribe.Title = "Описание проблемы";
             ProblemDescribe.GetCurrentValueDelegate = GetProblem;
             ProblemDescribe.SetPropertyDelegate = SetProblem;
-            //      OrgamizationHolder.StringType = StringProps.Type.Line;
 
             ProblemPropsHolder.PropsList.Add(ProblemDescribe);
         }
@@ -126,7 +122,7 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
         public override void MouseDown(Point e)
         {
-            //throw new NotImplementedException();
+
         }
 
         public override void MouseEnter()
@@ -170,7 +166,7 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
         public override void MouseUp(Point e)
         {
-          //  throw new NotImplementedException();
+
         }
 
         public override void Select()
@@ -201,7 +197,7 @@ namespace IVSMlib.VsmCanvas.MarksUI
                 else
                 {
                     dc.DrawRoundedRectangle(DrawBrush, new Pen(FillBrush, 0), new Rect(Location.X, Location.Y, Size.Width, Size.Height), Size.Width / 2, Size.Height / 2);
-                    //  dc.DrawRectangle(Brushes.White, new Pen(FillBrush, 0), new Rect((Location.X+ Size.Width / 2)-8, Location.Y+3, 16, 10));
+                  
                     dc.DrawRectangle(Brushes.White, new Pen(FillBrush, 0), new Rect((Location.X + Size.Width / 2) - points.mark_x_offest, Location.Y + points.mark_y_offest, points.mark_width, points.mark_height));
                     dc.DrawRoundedRectangle(Brushes.White, new Pen(FillBrush, 0), new Rect((Location.X + Size.Width / 2) - points.mark_circle_x_offset, Location.Y + points.mark_y_offest + points.mark_height + points.mark_circle_y_offset, points.mark_circle_size, points.mark_circle_size), 10, 10);
                 }

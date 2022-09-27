@@ -27,7 +27,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
         private void TextBoxMouseLeave(object sender, RoutedEventArgs e)
         {
-      //      MessageBox.Show(((TextBox)sender).Text);
             Props.SetPropertyDelegate?.Invoke(((TextBox)sender).Text);
         }
 

@@ -32,17 +32,14 @@ namespace IVSMlib.ViewModel.ControlBar.Items
         {
             if(DocComboBox.SelectedIndex !=-1)
             {
-              //  bool doc_is_exist = false;
                 foreach(DocumentUnit du in Props.GetCurrentValueDelegate())
                 {
                     if (du.DocLable == DocComboBox.Text)
                     {
-                    //    Console.WriteLine(DocComboBox.Text);
                         MessageBox.Show("Данный документ уже имееться в списке");
                         return;
                     }
                 }
-                    //  Props.AddDocumentCallback(du);
                 foreach (DocumentUnit docs in DocConnector.CurrentDocList)
                 {
 
@@ -76,8 +73,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
                     break;
                 }
             }
-            //   var s = DocListBox.Items[DocListBox.SelectedIndex].ToString();
-            // MessageBox.Show(s);
         }
 
         public DocumentItem()
@@ -94,7 +89,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
             DocComboBox.Height = 30;
             DocComboBox.Background = (SolidColorBrush)converter.ConvertFrom("#EEEEEE");
             DocComboBox.BorderBrush = (SolidColorBrush)converter.ConvertFrom("#B1B1B1");
-           // DocComboBox.SelectionChanged += ComboBoxSelect;
             Canvas.SetLeft(DocComboBox, SideMargin);
 
             AddDocButton = new Button();
@@ -137,7 +131,7 @@ namespace IVSMlib.ViewModel.ControlBar.Items
             {
                 DocListBox.Items.Add(doc.DocLable);
             }
-         //   throw new NotImplementedException();
+
         }
 
         public override double GetHeight() => 215;

@@ -21,8 +21,7 @@ namespace IVSMlib.VsmCanvas.Units
         private List<VisualButton> Buttons = new List<VisualButton>();
         private VisualButton SelectedButton;
 
-       // private bool ShowAddButtons;
-  //      private bool ShowDeleteButtons;
+
 
         public delegate void InsertButton(Int32 from, Int32 to);
         public event InsertButton InsertButtonClick;
@@ -51,8 +50,7 @@ namespace IVSMlib.VsmCanvas.Units
             Owner = _owner;
             Loc = new Point(1, 1);
             drawBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#DBDBDB");
-   //         ShowAddButtons = false;
-           // ShowDeleteButtons = false;
+
         }
 
         public void Show()
@@ -81,27 +79,7 @@ namespace IVSMlib.VsmCanvas.Units
 
         public void ShowDeleteButton()
         {
-            //if (ShowAddButtons)
-            //{
-            //    ShowAddButtons = false;
-            //    Buttons.Clear();
-            //    SelectedButton = null;
-            //}
-            //double y_offset = Loc.Y;
-            //Int32 index = 0;
-            //foreach (double height in Owner.RowHeight)
-            //{
-            //    VisualButton del_button = new VisualButton();
-            //    del_button.SetSize(RWidth, height);
-            //    del_button.SetLocation(Loc.X, y_offset);
-            //    del_button.Tag = index++;
-            //    del_button.SetButtonColor(Colors.Red);
-            //    del_button.FocusBrush = Brushes.Yellow;
-            //    Buttons.Add(del_button);
-            //    y_offset += height;
-            //    ShowDeleteButtons = true;
-            //}
-            //DrawUI();
+
         }
 
         public void UpdateButtons()
@@ -119,60 +97,23 @@ namespace IVSMlib.VsmCanvas.Units
                 del_button.FocusBrush = Brushes.WhiteSmoke;
                 Buttons.Add(del_button);
                 y_offset += height;
-           //     ShowDeleteButtons = true;
+
             }
         }
 
         public void HideDeleteButton()
         {
-           // ShowDeleteButtons = false;
-         //   Buttons.Clear();
-          //  SelectedButton = null;
-         //   DrawUI();
+
         }
 
         public void ShowRowAddButton()
         {
-            //double y_offset = Loc.Y;
-            ////    Int32 col_index = 0;
-            //Int32 index = 0;
-            //foreach (double height in Owner.RowHeight)
-            //{
-            //    if (index != 0)
-            //    {
-            //        VisualButton c_add_top = new VisualButton();
-            //        c_add_top.SetSize(RWidth, height / 2);
-            //        c_add_top.SetLocation(Loc.X, y_offset);
-            //        c_add_top.Tag = new InsertBetween(index - 1, index);
-            //        c_add_top.SetButtonColor(Colors.LightBlue);
-            //        Buttons.Add(c_add_top);
 
-            //    }
-            //    y_offset += height / 2;
-
-
-            //    if (index != Owner.RowHeight.Count - 1)
-            //    {
-            //        VisualButton c_add_bottom = new VisualButton();
-            //        c_add_bottom.SetSize(RWidth, height / 2);
-            //        c_add_bottom.SetLocation(Loc.X, y_offset);
-            //        c_add_bottom.Tag = new InsertBetween(index, index + 1);
-            //        c_add_bottom.SetButtonColor(Colors.LightBlue);
-            //        Buttons.Add(c_add_bottom);
-            //        y_offset += height / 2;
-            //    }
-            //    index++;
-            //}
-            //ShowAddButtons = true;
-            //DrawUI();
         }
 
         public void HideRowAddButton()
         {
-            //ShowAddButtons = false;
-            //Buttons.Clear();
-            //SelectedButton = null;
-            //DrawUI();
+
         }
 
 
@@ -185,45 +126,23 @@ namespace IVSMlib.VsmCanvas.Units
             {
                 dc.DrawRectangle(drawBrush, new Pen(Brushes.DarkGray, 0.5), new Rect(Loc.X, Loc.Y, RWidth, RHeight));
 
-  //              if (ShowAddButtons || ShowDeleteButtons)
-               // {
                     foreach (VisualButton button in Buttons)
                     {
                         button.Draw(dc);
                     }
-             //   }
             }
             dc.Close();
         }
 
 
-        //public override void DrawUI()
-        //{
-
-        //    DrawingContext dc = this.RenderOpen();
-
-        //    dc.DrawRectangle(drawBrush, new Pen(Brushes.DarkGray, 0.5), new Rect(Loc.X, Loc.Y, RWidth, RHeight));
-
-        //    if (ShowButtons)
-        //    {
-        //        foreach (VisualButton button in Buttons)
-        //        {
-        //            button.Draw(dc);
-        //        }
-        //    }
-
-        //    dc.Close();
-        //}
-
         public override void MouseEnter()
         {
-            //   throw new NotImplementedException();
+
         }
 
         public override void MouseMove(Point e)
         {
-        //    if (ShowAddButtons || ShowDeleteButtons)
-          //  {
+ 
                 for (int i = 0; i <= Buttons.Count - 1; i++)
                 {
                     if (Buttons[i].CheckHit(e))
@@ -250,7 +169,6 @@ namespace IVSMlib.VsmCanvas.Units
                     SelectedButton = null;
 
                 }
-          //  }
         }
 
         public override void MouseLeave()
@@ -272,18 +190,9 @@ namespace IVSMlib.VsmCanvas.Units
                 {
                     RowButtonClickEvent?.Invoke((int)Buttons[i].Tag);
                 }
-                //    if (ShowDeleteButtons)
-                //    {
-                //        DeleteButtonClick?.Invoke((int)Buttons[i].Tag);
-                //    }
-                //    if (ShowAddButtons)
-                //    {
-                //        InsertButtonClick?.Invoke(((InsertBetween)Buttons[i].Tag).From, ((InsertBetween)Buttons[i].Tag).To);
-                //    }
-
 
             }
-           // }
+
         }
 
         public override void MouseUp(Point e)
@@ -293,12 +202,12 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void Select()
         {
-            //   throw new NotImplementedException();
+
         }
 
         public override void Unselect()
         {
-            //   throw new NotImplementedException();
+
         }
     }
 }

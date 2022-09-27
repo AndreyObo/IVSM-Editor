@@ -65,7 +65,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
         private void ItemChange(object sender, SelectionChangedEventArgs e)
         {
-            // Console.WriteLine(((ComboBox)sender).SelectedValue.ToString());
             Props.SetPropertyDelegate?.Invoke(((ComboBox)sender).SelectedValue.ToString());
         }
 

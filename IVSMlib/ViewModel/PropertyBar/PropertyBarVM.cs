@@ -60,8 +60,6 @@ namespace IVSMlib.ViewModel
 
         
 
-    //    public ICommand MouseLeaveCommand { get; set; }
-
         private Visibility header_bar_vis;
 
         public Visibility HeaderBarVis
@@ -77,20 +75,6 @@ namespace IVSMlib.ViewModel
             }
         }
 
-        //private bool edit_text_box_enable;
-
-        //public bool EditLableTextBoxEnable
-        //{
-        //    get
-        //    {
-        //        return edit_text_box_enable;
-        //    }
-        //    set
-        //    {
-        //        edit_text_box_enable = value;
-        //        OnPropertyChanged("EditLableTextBoxEnable");
-        //    }
-        //}
 
         private string lable_text;
 
@@ -103,18 +87,6 @@ namespace IVSMlib.ViewModel
                 OnPropertyChanged("LableText");
             }
         }
-
-        //private string item_text;
-
-        //public string ItemText
-        //{
-        //    get { return item_text; }
-        //    set
-        //    {
-        //        item_text = value;
-        //        OnPropertyChanged("ItemText");
-        //    }
-        //}
 
         private double header_bar_height;
 
@@ -142,29 +114,12 @@ namespace IVSMlib.ViewModel
 
             ActiveTabPage = 0;
 
-       //     MouseLeaveCommand = new Command(Mouse_Leave);
-
-            //  HeaderBarVis = Visibility.Hidden;
-          //  EditLableTextBoxEnable = false;
             HeaderBarHeight = 70;
 
             StrucPageIsDraw = false;
             ViuslPageIsDraw = false;
         }
 
-        //public void Mouse_Leave()
-        //{
-        //   // MessageBox.Show("hgjhj");
-        //    if(CurrentHolder.SetLableCallback !=null)
-        //    {
-        //        CurrentHolder.SetLableCallback(ItemText);
-        //    }
-        //}
-
-        //private void Add()
-        //{
-
-        //}
 
         private void MakeHeader(PropsHolder props_holder)
         {
@@ -429,29 +384,14 @@ namespace IVSMlib.ViewModel
             StrucPageIsDraw = false;
             ViuslPageIsDraw = false;
 
-            //if (props_holder.OwnerType == PropsHolder.Type.Condition || props_holder.OwnerType == PropsHolder.Type.PathLine)
-            //{
-            //    // HeaderBarVis = Visibility.Hidden;
-            //    EditLableTextBoxEnable = false;
-            // //   HeaderBarHeight = 0;
-            //}
-            //else
-            //{
-            //    //    HeaderBarVis = Visibility.Visible;
-            //    EditLableTextBoxEnable = true;
-            //  //  HeaderBarHeight = 70;
-            //}
-
             DataPropsField.Children.Clear();
             CurrentItemList.Clear();
             VisualPropsField.Children.Clear();
             CurrentVisualItemList.Clear();
             CurrentHolder = props_holder;
-     //       double disp = 1;
             MakeHeader(CurrentHolder);
 
-            //DrawStructProps(props_holder.PropsList);
-            //DrawVisualProps(props_holder.VisualPropsList);
+
             if (ActiveTabPage == StructPropsPage)
             {
                 DrawStructProps(CurrentHolder.PropsList);
@@ -464,143 +404,13 @@ namespace IVSMlib.ViewModel
                 ViuslPageIsDraw = true;
             }
 
-
-            //foreach (Props props in props_holder.PropsList)
-            //{
-            //    if (props is StringProps sp)
-            //    {
-            //        if (sp.PropsEditType == StringProps.EditType.Line)
-            //        {
-            //            TextBoxItem item = new TextBoxItem();
-            //            item.SetWidth(DataPropsField.ActualWidth);
-            //            item.SetTop(disp);
-            //            item.BindingProps(sp);
-            //            foreach (UIElement el in item.GetUIElement())
-            //            {
-            //                DataPropsField.Children.Add(el);
-
-            //            }
-            //            CurrentItemList.Add(item);
-            //            disp += item.GetHeight();
-            //        }
-            //        if(sp.PropsEditType == StringProps.EditType.MultiLine)
-            //        {
-            //            TextAreaItem item = new TextAreaItem();
-            //            item.SetWidth(DataPropsField.ActualWidth);
-            //            item.SetTop(disp);
-            //            item.BindingProps(sp);
-            //            foreach (UIElement el in item.GetUIElement())
-            //            {
-            //                DataPropsField.Children.Add(el);
-
-            //            }
-            //            CurrentItemList.Add(item);
-            //            disp += item.GetHeight();
-            //        }
-            //    }
-            //    if(props is TimeProps tp)
-            //    {
-            //        TimeItem t_item = new TimeItem();
-            //        t_item.SetWidth(DataPropsField.ActualWidth);
-            //        t_item.SetTop(disp);
-            //        t_item.BindingProps(tp);
-            //        foreach (UIElement el in t_item.GetUIElement())
-            //        {
-            //            DataPropsField.Children.Add(el);
-
-            //        }
-            //        CurrentItemList.Add(t_item);
-            //        disp += t_item.GetHeight();
-            //    }
-            //    if (props is DateProps dp)
-            //    {
-            //        DataItem t_item = new DataItem();
-            //        t_item.SetWidth(DataPropsField.ActualWidth);
-            //        t_item.SetTop(disp);
-            //        t_item.BindingProps(dp);
-            //        foreach (UIElement el in t_item.GetUIElement())
-            //        {
-            //            DataPropsField.Children.Add(el);
-
-            //        }
-            //        CurrentItemList.Add(t_item);
-            //        disp += t_item.GetHeight();
-            //    }
-            //    if (props is DocumentListProps dl)
-            //    {
-            //        DocumentItem d_item = new DocumentItem();
-            //        d_item.SetWidth(DataPropsField.ActualWidth);
-            //        d_item.SetTop(disp);
-            //        d_item.BindingProps(dl);
-            //        foreach (UIElement el in d_item.GetUIElement())
-            //        {
-            //            DataPropsField.Children.Add(el);
-
-            //        }
-            //        CurrentItemList.Add(d_item);
-            //        disp += d_item.GetHeight();
-            //    }
-            //}
         }
-
-        //private void UpdateBindings(PropsHolder props_holder)
-        //{
-        //    foreach (Props props in props_holder.PropsList)
-        //    {
-
-        //    }
-        //}
 
         public void BuildPropertyList(PropsHolder props_holder)
         {
-            //if (props_holder.OwnerType == CurrentHolder.OwnerType)
-            //{
-            //    UpdateBindings(props_holder);
-            //}
-          //  else
-          //  {
-          
-                BuildNewList(props_holder);
-        //    }
-            
-            
-            //Add();
-            //      Int32 dips = 0;
-            //    foreach (Props props in props_list)
-            //    {
-            //        if (props is StringProps)
-            //        {
-            //            TextBlock lbl = new TextBlock();
-            //            Canvas.SetLeft(lbl, 3);
-            //            Canvas.SetTop(lbl, dips);
-            //            lbl.Text = ((StringProps)props).GetCurrentValueDelegate();
-            //            Filed.Children.Add(lbl);
-            //            dips += 10 + 5;
 
-            //            Console.WriteLine(((StringProps)props).GetCurrentValueDelegate());
-
-            //            TextBox inter = new TextBox();
-            //            Canvas.SetLeft(inter, 3);
-            //            Canvas.SetTop(inter, dips);
-            //            inter.Height = 30;
-            //            inter.Width = 100;
-            //            Filed.Children.Add(inter);
-            //            dips += 30 + 5;
-
-            //            Line l = new Line();
-
-            //            l.X1 = 0;
-            //            l.Y1 = dips;
-            //            l.X2 = 150;
-            //            l.Y2 = dips;
-            //            l.StrokeThickness = 1;
-            //            l.Stroke = Brushes.Red;
-
-            //            Filed.Children.Add(l);
-            //            dips += 10;
-            //        }
-            //    }
-            //}
+            BuildNewList(props_holder);
+       
         }
     }
     }

@@ -21,8 +21,6 @@ namespace IVSMlib.VsmCanvas
        public abstract void Select();
        public abstract void Unselect();
 
-      // public abstract void SetLocation(double x, double y);
-
        public abstract void DrawUI();
 
     }

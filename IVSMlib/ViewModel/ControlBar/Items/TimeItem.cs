@@ -29,8 +29,7 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
         private void TextBoxMouseLeave(object sender, RoutedEventArgs e)
         {
-            //      MessageBox.Show(((TextBox)sender).Text);
-            //   Prop.SetPropertyDelegate();
+
             Time.Type old_type = Prop.GetCurrentValueDelegate().Measure;
             Int32 res;
             if(int.TryParse(((TextBox)sender).Text, out res))

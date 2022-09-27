@@ -33,7 +33,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public event MouseResult MouseResultEvent;
 
-    //    public Boolean ShowMoveButton;
 
         public CellIndex TableIndex;
 
@@ -75,17 +74,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             RelSize.Height = size.Height - 2 * CellMargin.Top;
         }
 
-        //public virtual void Select()
-        //{
-        //    DrawBrush = SelectedBrush;
-        //    IsSelect = true;
-        //}
-
-        //public virtual void Unselect()
-        //{
-        //    DrawBrush = BackgoundBrush;
-        //    IsSelect = false;
-        //}
 
         public virtual Size GetSize()
         {
@@ -136,38 +124,11 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         }
 
-       // public abstract void DrawUI();
-
-        //public virtual void MouseEnter()
-        //{
-        //    DrawBrush = FocusedBrush;
-        //    DrawUI();
-        //}
-
-        //public virtual void MouseLeave()
-        //{
-        //    DrawBrush = BackgoundBrush;
-        //    DrawUI();
-        //}
-
-        //public virtual void MouseMove(Point e)
-        //{
-        //    //None
-        //}
-
-        //public virtual void MouseDown(Point e)
-        //{
-        //    CellMouseResult res = new CellMouseResult();
-        //    res.CellResult = CellMouseResult.Result.CellClick;
-        //    MouseResultEvent.Invoke(this, e, res);
-        //}
-
 
         public virtual CellMouseResult GetMouseDownResult(Point e)
         {
             CellMouseResult res = new CellMouseResult();
             res.CellResult = CellMouseResult.Result.CellClick;
-          //  MouseResultEvent.Invoke(this, e, res);
             return res;
         }
 

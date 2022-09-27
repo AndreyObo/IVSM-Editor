@@ -36,66 +36,14 @@ namespace IVSMlib.Global
             color_index++;
         }
 
-        //public static IEnumerable<Color> GetColors()
-        //{
-        //    return new List<Color>
-        //    {
-        //        LastColors[]
-        //    };
-        //}
 
         public static List<MoveModel> MoveModelsStore = new List<MoveModel>();
         public static IVSM CurrentIVSM { get; set; }
         public static string CurrentFileName= NULL_FILE;
 
-        //    public static MainTableVM TableVM { get; set; }
 
         public enum TableItems { Player, Action, Condition }
         public static TableItems CreatedItem;
 
-        //public static void CreateCell(Cell current_cell, Int32 row, Int32 column)
-        //{
-        //   if(column == 0)
-        //   {
-        //        if (current_cell is PlayerCell)
-        //        {
-        //            MessageBox.Show("Cell alredy have player");
-        //        }
-        //        Console.WriteLine("This player Cell");
-        //          PlayerCell player_cell = new PlayerCell();
-        //    //   ConditionCell player_cell = new ConditionCell();
-        //         //   player_cell.player_model = new Player();
-        //        //   CurrentMap.VsmItems[row][column] = player_cell.player_model;
-        //        TableVM.AddCell(player_cell, row, column);
-
-        //        return;
-        //    }
-        //   else
-        //   {
-        //        if (CreatedItem == TableItems.Action)
-        //        {
-        //            ActionCell action_cell = new ActionCell();
-        //            TableVM.AddCell(action_cell, row, column);
-        //        }
-        //        else if(CreatedItem == TableItems.Condition)
-        //        {
-        //            ConditionCell action_cell = new ConditionCell();
-        //            TableVM.AddCell(action_cell, row, column);
-        //        }
-        //    }
-
-
-        //}
-
-        //public static void ShowNeibMoveBtn(Cell cell)
-        //{
-        //    Int32 Column = cell.TableIndex.Column;
-
-        //    for(Int32 row=0; row <=TableVM.RowColumn.Count-1; row++)
-        //    {
-        //        TableVM.RowColumn[row][Column + 1].ShowMoveButton = true;
-        //        TableVM.RowColumn[row][Column +1].DrawUI();
-        //    }
-        //}
     }
 }

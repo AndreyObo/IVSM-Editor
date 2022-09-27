@@ -118,31 +118,15 @@ namespace IVSMlib.VsmCanvas.CellUI
             ActionPropsHolder.GetLableCallback = GetLable;
             ActionPropsHolder.SetLableCallback = SetLable;
 
-            //   PropsHolders = new List<Props>();
-
             StringProps OrgamizationHolder = new StringProps();
 
             OrgamizationHolder.PropsEditType = StringProps.EditType.Line;
             OrgamizationHolder.Title = "Название операции";
             OrgamizationHolder.GetCurrentValueDelegate = GetActName;
             OrgamizationHolder.SetPropertyDelegate = SetActName;
-            //      OrgamizationHolder.StringType = StringProps.Type.Line;
 
             ActionPropsHolder.PropsList.Add(OrgamizationHolder);
 
-
-           
-            // PropsHolders.Add(OrgamizationHolder);
-
-            //StringProps DepartmentHolder = new StringProps();
-            //DepartmentHolder.PropsEditType = StringProps.EditType.Line;
-            //DepartmentHolder.Title = "Подразделение";
-            //DepartmentHolder.GetCurrentValueDelegate = GetDepName;
-            //DepartmentHolder.SetPropertyDelegate = SetDepName;
-            ////  DepartmentHolder.StringType = StringProps.Type.Text;
-
-            ////       PropsHolders.Add(DepartmentHolder);
-            //ActionPropsHolder.PropsList.Add(DepartmentHolder);
 
             TimeProps tm_a = new TimeProps();
             tm_a.Title = "Время операции";
@@ -215,7 +199,7 @@ namespace IVSMlib.VsmCanvas.CellUI
             {
                 IsBorderTransparant = false;
             }
-            //DrawBrush = new SolidColorBrush(c);
+
             BorderPen = new Pen(new SolidColorBrush(c), BorderSize);
             DrawUI();
         }
@@ -422,7 +406,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             SetLineLoc();
             UpdateFormatCellText();
             DrawUI();
-        //    deb();
         }
 
         public override Size GetContentSize()
@@ -430,13 +413,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             return new Size(this.size.Width - CellMargin.Left * 2, this.size.Height - CellMargin.Top * 2);
         }
 
-        //private void deb()
-        //{
-        //    Console.WriteLine("");
-        //    Console.Write(this.TableIndex.Row.ToString() + " - "+ this.TableIndex.Column.ToString()+ " = ");
-        //    Console.WriteLine(LinesLeftCenter.Count.ToString());
-
-        //}
 
         private void UpdateButtonPos()
         {
@@ -451,8 +427,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void Select()
         {
-          //  DrawBrush = SelectedBrush;
-        //    ShowMoveButton = true;
             base.IsSelect = true;
             IsMouseEnter = false;
             
@@ -460,39 +434,9 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void Unselect()
         {
-         //   DrawBrush = BackgoundBrush;
-         //   ShowMoveButton = false;
             base.IsSelect = false;
         }
 
-        //private void DecFontSize(FormattedText formattedText)
-        //{
-        //    double cell_height = ((size.Height - (CellMargin.Top * 2)) - 5) - 15;
-        //    Console.WriteLine("\ndec enter text_h -  " + formattedText.Height + " cell_h - " + cell_height.ToString());
-        //    while (formattedText.Height >= cell_height)
-        //    {
-              
-        //        cur_font_size -= 2;
-        //        formattedText.SetFontSize(cur_font_size);
-        //        Console.WriteLine("dec insede while text_h -  " + formattedText.Height + " cell_h - " + cell_height.ToString());
-
-        //    }
-        //    Console.WriteLine("dec out text_h -  " + formattedText.Height + " cell_h" + cell_height.ToString());
-        //}
-
-        //private void IncFontSize(ref FormattedText formattedText)
-        //{
-        //    double cell_height = ((size.Height - (CellMargin.Top * 2)) - 5) - 15;
-        //    while (formattedText.Height <= cell_height && cur_font_size <= 14)
-        //    {
-              
-        //        cur_font_size += 2;
-        //        formattedText.SetFontSize(cur_font_size);
-
-        //    }
-
-        // //   Console.WriteLine("inc text_h -  " + formattedText.Height + " cell_h" + (((size.Height - (CellMargin.Top * 2)) - 5) - 5).ToString());
-        //}
 
         private void UpdateFormatCellText()
         {
@@ -563,12 +507,8 @@ namespace IVSMlib.VsmCanvas.CellUI
                 dc.DrawRectangle(Brushes.Transparent, FocusPen, new Rect(Loc.X + CellMargin.Left - 2, Loc.Y + CellMargin.Top - 2, (this.size.Width - CellMargin.Left * 2) + 4, (this.size.Height - CellMargin.Top * 2) + 4));
             }
 
-            //FormattedText formattedText = new FormattedText(Lable, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 14, Brushes.Black);
-            //dc.DrawText(formattedText, new Point(Loc.X + CellMargin.Left, Loc.Y + CellMargin.Top));
 
             double l_y = ((size.Height - (CellMargin.Top * 2)) / 2 - FormantCellText.Height / 2);
-
-        //    Console.WriteLine("\nDrawUI text_height - " + FormantCellText.Height.ToString());
 
             dc.DrawText(FormantCellText, new Point(Loc.X + CellMargin.Left, Loc.Y + CellMargin.Top + l_y));
 
@@ -593,8 +533,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             dc.Close();
         }
-
-      //  private void DrawCellCornerButton()
 
         public override void MouseMove(Point e)
         {
@@ -630,12 +568,8 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void MouseEnter()
         {
-          
-            //Console.WriteLine("Enter");
-
             if (IsSelect==false)
             {
-              //  DrawBrush = FocusedBrush;
                 IsMouseEnter = true;
                 DrawUI();
 
@@ -649,7 +583,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
             if (IsSelect == false)
             {
-                //  DrawBrush = FocusedBrush;
                 IsMouseEnter = false;
                 DrawUI();
 
@@ -709,42 +642,36 @@ namespace IVSMlib.VsmCanvas.CellUI
         public void AddLeftTopLine(Line line)
         {
             line.SetEndPoint(Loc.X + CellMargin.Left, Loc.Y + CellMargin.Top);
-        //    line.DrawUI();
             LinesLeftTop.Add(line);
         }
 
         public void AddLeftBottomLine(Line line)
         {
             line.SetEndPoint(Loc.X + CellMargin.Left, Loc.Y +size.Height - CellMargin.Top);
-          //  line.DrawUI();
             LinesLeftBottom.Add(line);
         }
 
         public void AddRightTopLine(Line line)
         {
            line.SetStartPoint(Loc.X+size.Width - CellMargin.Left, Loc.Y + CellMargin.Top);
-         //   line.DrawUI();
             LinesRightTop.Add(line);
         }
 
         public void AddRightBottomLine(Line line)
         {
             line.SetStartPoint(Loc.X + size.Width - CellMargin.Left, Loc.Y + size.Height - CellMargin.Top);
-        //    line.DrawUI();
             LinesRightBottom.Add(line);
         }
 
         public void AddRightCenterLine(Line line)
         {
             line.SetStartPoint(Loc.X + size.Width - CellMargin.Left, Loc.Y + size.Height - (size.Height/2));
-        //    line.DrawUI();
             LinesRightCenter.Add(line);
         }
 
         public void AddLeftCenterLine(Line line)
         {
             line.SetEndPoint(Loc.X + CellMargin.Left, Loc.Y + size.Height - (size.Height / 2));
-        //    line.DrawUI();
             LinesLeftCenter.Add(line);
         }
 
@@ -802,7 +729,7 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public override void MouseUp(Point e)
         {
-           // throw new NotImplementedException();
+
         }
 
         public void ActiveConnectButton()
@@ -826,14 +753,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public void DisconnectLine(Line disc_line)
         {
-
-        //        public List<Line> LinesLeftTop { get; set; }
-        //    public List<Line> LinesRightTop { get; set; }
-        //public List<Line> LinesLeftBottom { get; set; }
-        //public List<Line> LinesRightBottom { get; set; }
-
-        //public List<Line> LinesRightCenter { get; set; }
-        //public List<Line> LinesLeftCenter { get; set; }
 
             for (int i = 0; i <= LinesLeftTop.Count - 1; i++)
             {

@@ -59,8 +59,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             ConditionPropsHolder = new PropsHolder();
             ConditionPropsHolder.OwnerType = PropsHolder.Type.Condition;
 
-            //   PropsHolders = new List<Props>();
-
             StringProps OrgamizationHolder = new StringProps();
 
             OrgamizationHolder.PropsEditType = StringProps.EditType.Line;
@@ -101,20 +99,6 @@ namespace IVSMlib.VsmCanvas.CellUI
             ConditionPropsHolder.PropsList.Add(ConditionCHolder);
 
             //----------------------------------------------
-
-
-
-            // PropsHolders.Add(OrgamizationHolder);
-
-            //StringProps DepartmentHolder = new StringProps();
-            //DepartmentHolder.PropsEditType = StringProps.EditType.Line;
-            //DepartmentHolder.Title = "Подразделение";
-            //DepartmentHolder.GetCurrentValueDelegate = GetDepName;
-            //DepartmentHolder.SetPropertyDelegate = SetDepName;
-            ////  DepartmentHolder.StringType = StringProps.Type.Text;
-
-            ////       PropsHolders.Add(DepartmentHolder);
-            //ActionPropsHolder.PropsList.Add(DepartmentHolder);
 
             TimeProps tm_a = new TimeProps();
             tm_a.Title = "Время операции";
@@ -275,9 +259,7 @@ namespace IVSMlib.VsmCanvas.CellUI
 
 
         public override void MouseMove(Point e)
-        {
-          
-
+        { 
                 for (int i = 0; i <= CellButtons.Count - 1; i++)
                 {
                     if (CellButtons[i].CheckHit(e))
@@ -449,14 +431,12 @@ namespace IVSMlib.VsmCanvas.CellUI
         public override void Select()
         {
             DrawBrush = SelectedBrush;
-         //   ShowMoveButton = true;
             IsSelect = true;
         }
 
         public override void Unselect()
         {
             DrawBrush = BackgoundBrush;
-          //  ShowMoveButton = false;
             IsSelect = false;
         }
 
@@ -585,11 +565,6 @@ namespace IVSMlib.VsmCanvas.CellUI
 
         public void DisconnectLine(Line disc_line)
         {
-        //     private List<Line> LinesTop { get; set; }
-        //private List<Line> LinesRight { get; set; }
-        //private List<Line> LinesLeft { get; set; }
-        //private List<Line> LinesBottom { get; set; }
-
 
             for (int i = 0; i <= LinesTop.Count - 1; i++)
             {

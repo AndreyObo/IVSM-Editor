@@ -22,11 +22,10 @@ namespace IVSMlib.VsmCanvas.Units
 
         private MainTableVM Owner;
         private List<VisualButton> Buttons = new List<VisualButton>();
-     //   private List<VisualButton> DeleteButtons = new List<VisualButton>();
+
         private VisualButton SelectedButton;
 
-    //    private bool ShowAddButtons;
-    //    private bool ShowDeleteButtons;
+
 
         public delegate void InsertButton(Int32 from, Int32 to);
         public event InsertButton InsertButtonClick;
@@ -43,8 +42,7 @@ namespace IVSMlib.VsmCanvas.Units
             Loc = new Point(1, 1);
             drawBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#DBDBDB");
             Owner = _owner;
-        //    ShowAddButtons = false;
-          //  ShowDeleteButtons = true;
+
         }
 
         public void Show()
@@ -89,27 +87,6 @@ namespace IVSMlib.VsmCanvas.Units
         public void ShowDeleteButton()
         {
           
-            //if(ShowAddButtons)
-            //{
-            //    ShowAddButtons = false;
-            //    Buttons.Clear();
-            //    SelectedButton = null;
-            //}
-            //double x_offset = Loc.X;
-            //Int32 index = 0;
-            //foreach (double width in Owner.ColumnWidth)
-            //{
-            //    VisualButton del_button = new VisualButton();
-            //    del_button.SetSize(width, RHeight);
-            //    del_button.SetLocation(x_offset, Loc.Y);
-            //    del_button.Tag = index++;
-            //    del_button.SetButtonColor(Colors.Red);
-            //    del_button.FocusBrush = Brushes.Yellow;
-            //    Buttons.Add(del_button);
-            //    x_offset += width;
-            //    ShowDeleteButtons = true;
-            //}
-            //DrawUI();
         }
 
         public void UpdateButtons()
@@ -127,50 +104,17 @@ namespace IVSMlib.VsmCanvas.Units
                 del_button.FocusBrush = Brushes.WhiteSmoke;
                 Buttons.Add(del_button);
                 x_offset += width;
-            //    ShowDeleteButtons = true;
             }
-        //    DrawUI();
+
         }
 
         public void ShowColumnAddButton()
         {
-        //    double x_offset = Loc.X;
-        ////    Int32 col_index = 0;
-        //    Int32 index = 0;
-        //    foreach(double width in Owner.ColumnWidth)
-        //    {
-        //        if (index != 0)
-        //        {
-        //            VisualButton c_add_left = new VisualButton();
-        //            c_add_left.SetSize(width / 2, RHeight);
-        //            c_add_left.SetLocation(x_offset, Loc.Y);
-        //            c_add_left.Tag = new InsertBetween(index-1, index);
-        //            c_add_left.SetButtonColor(Colors.LightBlue);
-        //            Buttons.Add(c_add_left);
-                    
-        //        }
-        //        x_offset += width / 2;
 
-
-        //        if (index != Owner.ColumnWidth.Count-1)
-        //        {
-        //            VisualButton c_add_right = new VisualButton();
-        //            c_add_right.SetSize(width / 2, RHeight);
-        //            c_add_right.SetLocation(x_offset, Loc.Y);
-        //            c_add_right.Tag = new InsertBetween(index, index+1);
-        //            c_add_right.SetButtonColor(Colors.LightBlue);
-        //            Buttons.Add(c_add_right);
-        //            x_offset += width / 2;
-        //        }
-        //        index++;
-        //    }
-        //    ShowAddButtons = true;
-        //    DrawUI();
         }
 
         public void HideDeleteButton()
         {
-          //  ShowDeleteButtons = false;
             Buttons.Clear();
             SelectedButton = null;
             DrawUI();
@@ -178,7 +122,6 @@ namespace IVSMlib.VsmCanvas.Units
 
         public void HideColumnAddButton()
         {
-           // ShowAddButtons = false;
             Buttons.Clear();
             SelectedButton = null;
             DrawUI();
@@ -194,13 +137,10 @@ namespace IVSMlib.VsmCanvas.Units
 
                 dc.DrawRectangle(drawBrush, new Pen(Brushes.DarkGray, 0.5), new Rect(Loc.X, Loc.Y, RWidth, RHeight));
 
-           //     if (ShowAddButtons || ShowDeleteButtons)
-            //    {
                     foreach (VisualButton button in Buttons)
                     {
                         button.Draw(dc);
                     }
-            //   }
             }
          
             dc.Close();
@@ -208,13 +148,11 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseEnter()
         {
-         //   throw new NotImplementedException();
+
         }
 
         public override void MouseMove(Point e)
         {
-         //   if (ShowAddButtons || ShowDeleteButtons)
-          // {
                 for (int i = 0; i <= Buttons.Count - 1; i++)
                 {
                     if (Buttons[i].CheckHit(e))
@@ -234,14 +172,6 @@ namespace IVSMlib.VsmCanvas.Units
 
                     }
                 }
-
-            //if (SelectedButton != null)
-            //{
-            //    SelectedButton.Unselect();
-            //    SelectedButton = null;
-
-            //}
-            //}
         }
 
         public override void MouseLeave()
@@ -257,25 +187,12 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseDown(Point e)
         {
-          //  Console.WriteLine("Down");
 
             for (int i = 0; i <= Buttons.Count - 1; i++)
             {
                 if (Buttons[i].CheckHit(e))
                 {
-                    //// Console.WriteLine(((InsertBetween)Buttons[i].Tag).From.ToString() + " <-- >" + ((InsertBetween)Buttons[i].Tag).To.ToString());
-
-                    //if (ShowDeleteButtons)
-                    //{
-                    //    DeleteButtonClick?.Invoke((int)Buttons[i].Tag);
-                    //}
-                    //if(ShowAddButtons)
-                    //{
-                    //    InsertButtonClick?.Invoke(((InsertBetween)Buttons[i].Tag).From, ((InsertBetween)Buttons[i].Tag).To);
-                    //}
                     ColumnButtonClickEvent?.Invoke((int)Buttons[i].Tag);
-
-                //    Console.WriteLine(((int)Buttons[i].Tag).ToString());
                 }
             }
         }
@@ -287,12 +204,12 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void Select()
         {
-         //   throw new NotImplementedException();
+
         }
 
         public override void Unselect()
         {
-         //   throw new NotImplementedException();
+
         }
 
       

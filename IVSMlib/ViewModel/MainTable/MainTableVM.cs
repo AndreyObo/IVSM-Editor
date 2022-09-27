@@ -37,8 +37,6 @@ namespace IVSMlib.ViewModel
 
         public MainTable window;
 
-  //      public IVSM IVSM_Model;
-
         public MapConstructor MapConstructorInstance;
         private CreateMarkAction CreateMarkActionInstance;
         private MoveMarkAction MoveMarkInstance;
@@ -50,7 +48,6 @@ namespace IVSMlib.ViewModel
         private Window ColWindow;
         private bool IsColWindowVisible;
 
-        //   private bool Debug = false;
 
         private List<IAction> TableActions = new List<IAction>();
 
@@ -87,20 +84,18 @@ namespace IVSMlib.ViewModel
             }
             public void MouseDownAction(Point e, MouseState state)
             {
-                // throw new NotImplementedException();
+               
                 owner.CurrentAction = Actions.None;
             }
 
             public void MouseMoveAction(Point e)
             {
-               // bool cheek = false;
-               // if (e.X > owner.RullerThikknes && e.X < owner.TableWidth + owner.RullerThikknes-Column.BoxWidth())
-              //  {
+             
                     if (((Column)owner.SelectedColumn).PrevColumn == null)
                     {
                     if (e.X > owner.RullerThikknes + owner.TimeLableOffset && (e.X < ((Column)owner.SelectedColumn).NextColumn.GetPosition().X - 60))
                         ((Column)owner.SelectedColumn).SetLocation(e.X - owner.RullerThikknes, e.Y);
-                     //   owner.SelectedColumn.DrawUI(new Point(e.X - owner.RullerThikknes, e.Y));
+                   
                         return;
                     }
 
@@ -108,16 +103,16 @@ namespace IVSMlib.ViewModel
                     {
                        if(e.X < owner.TableWidth + owner.RullerThikknes - Column.BoxWidth()-20 && (e.X > ((Column)owner.SelectedColumn).PrevColumn.GetPosition().X + 60))
                         ((Column)owner.SelectedColumn).SetLocation(e.X - owner.RullerThikknes, e.Y);
-                    //owner.SelectedColumn.DrawUI(new Point(e.X - owner.RullerThikknes, e.Y));
+                   
                     return;
                     }
 
                 if ((e.X < ((Column)owner.SelectedColumn).NextColumn.GetPosition().X - 60) && (e.X > ((Column)owner.SelectedColumn).PrevColumn.GetPosition().X + 60))
                 {
                     ((Column)owner.SelectedColumn).SetLocation(e.X - owner.RullerThikknes, e.Y);
-                    //  owner.SelectedColumn.DrawUI(new Point(e.X - owner.RullerThikknes, e.Y));
+                  
                 }
-             //   }
+           
             }
 
             public void MouseUpAction(Point e)
@@ -151,17 +146,14 @@ namespace IVSMlib.ViewModel
                 owner.horisontal_ruler.DrawUI();
 
                 owner.SetCellLoc();
-               // owner.ChangeCellWidth(first_colum_index, second_colum_index);
+              
                 owner.ChangeCellSize();
                 owner.CurrentAction = Actions.None;
                 owner.SelectedColumn = null;
 
-                //   owner.TimeAxisUI.InizialazeColumnList(owner.ColumnWidth);
+              
                 owner.TimeAxisUI.DrawUI();
-                //foreach (double width in owner.ColumnWidth)
-                //{
-                //    Console.WriteLine(width.ToString());
-                //}
+               
 
             }
         }
@@ -176,21 +168,18 @@ namespace IVSMlib.ViewModel
             }
             public void MouseDownAction(Point e, MouseState state)
             {
-              //  throw new NotImplementedException();
+             
             }
 
             public void MouseMoveAction(Point e)
             {
-                //if (e.Y > owner.RullerThikknes && e.Y < owner.TableHeigth + owner.RullerThikknes- Row.BoxHeigth())
-                //{
-                //    owner.SelectedColumn.DrawUI(new Point(e.X, e.Y-owner.RullerThikknes));
-                //}
+               
 
                 if (((Row)owner.SelectedColumn).PrevRow == null)
                 {
                     if (e.Y > owner.RullerThikknes + 20+ owner.TableOffset.Y && (e.Y < (((Row)owner.SelectedColumn).NextRow.GetPosition().Y+ owner.TableOffset.Y - 60)))
                         ((Row)owner.SelectedColumn).SetLocation(e.X, e.Y - owner.RullerThikknes - owner.TableOffset.Y);
-                //    owner.SelectedColumn.DrawUI(new Point(e.X , e.Y - owner.RullerThikknes- owner.TableOffset.Y));
+              
                     return;
                 }
 
@@ -198,14 +187,14 @@ namespace IVSMlib.ViewModel
                 {
                     if (e.Y < owner.TableHeigth+ owner.TableOffset.Y + owner.RullerThikknes - Row.BoxHeigth() - 20 && (e.Y > (((Row)owner.SelectedColumn).PrevRow.GetPosition().Y + 60)))
                         ((Row)owner.SelectedColumn).SetLocation(e.X, e.Y - owner.RullerThikknes - owner.TableOffset.Y);
-                    //    owner.SelectedColumn.DrawUI(new Point(e.X, e.Y - owner.RullerThikknes- owner.TableOffset.Y));
+                   
                     return;
                 }
 
                 if ((e.Y < (((Row)owner.SelectedColumn).NextRow.GetPosition().Y+ owner.TableOffset.Y - 60)) && (e.Y > (((Row)owner.SelectedColumn).PrevRow.GetPosition().Y+ owner.TableOffset.Y + 60)))
                 {
                     ((Row)owner.SelectedColumn).SetLocation(e.X, e.Y - owner.RullerThikknes - owner.TableOffset.Y);
-                    //owner.SelectedColumn.DrawUI(new Point(e.X, e.Y - owner.RullerThikknes- owner.TableOffset.Y));
+                  
                 }
             }
 
@@ -232,7 +221,7 @@ namespace IVSMlib.ViewModel
                 owner.CurrentAction = Actions.None;
                 owner.SelectedColumn = null;
 
-                Console.WriteLine("---------rowwss---------");
+                
 
                 foreach (double height in owner.RowHeight)
                 {
@@ -254,7 +243,7 @@ namespace IVSMlib.ViewModel
 
             public void MouseDownAction(Point e, MouseState state)
             {
-                Console.WriteLine("Table VmClick clickkkk");
+               
                 if (owner.IsColWindowVisible == true)
                 {
                     owner.ColWindow.Close();
@@ -267,17 +256,13 @@ namespace IVSMlib.ViewModel
                 if(finde_ui == null)
                 {
                     owner.UnselectTableUI();
-             //       owner.PropertyBar.Clear();
-                 
-
+           
                 }
 
-             //   Console.WriteLine("From main VM - "+finde_ui.ToString());
 
-              
                 if(finde_ui is Mark mark)
                 {
-                   // mark.MouseDown(e);
+                 
                    if(mark is ISize size_mark)
                     {
                         if(size_mark.IsSetSizeMode())
@@ -304,7 +289,7 @@ namespace IVSMlib.ViewModel
                     return;
 
                 }
-                // Console.WriteLine(owner.FieldCanvas.GetVisual(e).ToString());
+              
                 if (e.X > owner.RullerThikknes && e.X < owner.RullerThikknes + owner.TableWidth && e.Y > owner.TableOffset.Y + owner.RullerThikknes && e.Y < owner.TableOffset.Y + owner.RullerThikknes + owner.TableHeigth)
                 {
                     owner.UnselectTableUI();
@@ -317,13 +302,13 @@ namespace IVSMlib.ViewModel
 
                 if (finde_ui != null)
                 {
-                    if ((finde_ui is Column) /*&& (((TableFile)finde_ui).IsActive)*/)
+                    if ((finde_ui is Column))
                     {
-                      //  owner.StartPos.X = e.X - ((TableFiled)finde_ui).GetPosition().X;
+                     
                         owner.SelectedColumn = (TableUI)finde_ui;
                         owner.CurrentAction = Actions.SetColumnH;
                     }
-                    if ((finde_ui is Row) /*&& (((TableFiled)finde_ui).IsActive)*/)
+                    if ((finde_ui is Row))
                     {
                         owner.SelectedColumn = (TableUI)finde_ui;
                         owner.CurrentAction = Actions.SetColumnV;
@@ -359,24 +344,21 @@ namespace IVSMlib.ViewModel
                 if (owner.FocusedUI != null && owner.FocusedUI != element)
                 {
                     owner.FocusedUI.MouseLeave();
-                 //   Console.WriteLine("Leveeee");
                     owner.FocusedUI = null;
                 }
                 else if (owner.FocusedUI != null && element == owner.FocusedUI)
                 {
                     owner.FocusedUI.MouseMove(e);
                     owner.FocusedUI.DrawUI();
-                  //  Console.WriteLine("Moveee");
                 }
                 else if (element != null)
                 {
                     owner.FocusedUI = element;
                     owner.FocusedUI.MouseEnter();
-                  //  Console.WriteLine("Entereeee");
 
                 }
 
-                //----------------------------------------
+             
                 if (e.X > owner.RullerThikknes && e.X  < owner.RullerThikknes + owner.TableWidth && e.Y > owner.TableOffset.Y + owner.RullerThikknes && e.Y < owner.TableOffset.Y + owner.RullerThikknes+owner.TableHeigth)
                 {
                     if (owner.IsCursorChanged)
@@ -386,44 +368,13 @@ namespace IVSMlib.ViewModel
                     owner.MapConstructorInstance.MouseMoveEvent(e);
                     return;
                 }
-                //----------------------------------------
-                //   Console.WriteLine("mmm");
-                //      Point mouse_click = new Point(e.X, e.Y);
-            //    DrawingVisual finde_ui = owner.FieldCanvas.GetVisual(e);
-
-          //      TableUI element = owner.FindeUI(e);
-
-                //if (finde_ui == null)
-                //{
-                //    if (owner.FocusedUI != null)
-                //    {
-                //        owner.FocusedUI.MouseLeave();
-                //        owner.FocusedUI = null;
-                //        return;
-                //    }
-                //}
-
-                //if (owner.FocusedUI != null && owner.FocusedUI != element)
-                //{
-                //    owner.FocusedUI.MouseLeave();
-                //}
-                //if (owner.FocusedUI != null && element == owner.FocusedUI)
-                //{
-                //    owner.FocusedUI.MouseMove(e);
-                //}
-                //if (element != null)
-                //{
-                //    owner.FocusedUI = element;
-                //    owner.FocusedUI.MouseEnter();
-                //}
-
 
                 bool cheek_goal = false;
 
                 if (finde_ui != null)
                 {
                     
-                    if ((finde_ui is Column) /*&& (((TableFiled)finde_ui).IsActive)*/)
+                    if ((finde_ui is Column))
                     {
                         owner.FieldCanvas.Cursor = Cursors.SizeWE;
                         owner.IsCursorChanged = true;
@@ -431,7 +382,7 @@ namespace IVSMlib.ViewModel
 
 
                     }
-                    if ((finde_ui is Row)/* && (((TableFiled)finde_ui).IsActive)*/)
+                    if ((finde_ui is Row))
                     {
                         owner.FieldCanvas.Cursor = Cursors.SizeNS;
                         owner.IsCursorChanged = true;
@@ -505,7 +456,7 @@ namespace IVSMlib.ViewModel
 
             public void MouseDownAction(Point e, MouseState state)
             {
-              //  throw new NotImplementedException();
+             
             }
 
             public void MouseMoveAction(Point e)
@@ -532,7 +483,7 @@ namespace IVSMlib.ViewModel
 
             public void MouseDownAction(Point e, MouseState state)
             {
-              //  throw new NotImplementedException();
+             
             }
 
             public void MouseMoveAction(Point e)
@@ -561,7 +512,6 @@ namespace IVSMlib.ViewModel
                 if(owner.FocusedUI != null)
                 {
                     owner.FocusedUI.MouseDown(e);
-                 //   owner.CurrentAction = Actions.None;
                 }
             }
 
@@ -574,20 +524,17 @@ namespace IVSMlib.ViewModel
                     if (owner.FocusedUI != null && owner.FocusedUI != element)
                     {
                         owner.FocusedUI.MouseLeave();
-                        //   Console.WriteLine("Leveeee");
                         owner.FocusedUI = null;
                     }
                     else if (owner.FocusedUI != null && element == owner.FocusedUI)
                     {
                         owner.FocusedUI.MouseMove(e);
                         owner.FocusedUI.DrawUI();
-                        //  Console.WriteLine("Moveee");
                     }
                     else if (element != null)
                     {
                         owner.FocusedUI = element;
                         owner.FocusedUI.MouseEnter();
-                        //  Console.WriteLine("Entereeee");
 
                     }
                 }
@@ -605,13 +552,10 @@ namespace IVSMlib.ViewModel
         public Actions CurrentAction;
         public VsmCustomCanvas FieldCanvas { get; set; }
 
-     //   public Command MouseDownCommand;
 
         public ICommand mouse_down { get; set; }
         public ICommand mouse_up { get; set; }
 
-    //    private HColumnUI SelectedColumn;
-     //   private VColumnUI SelectedColumnV;
 
         private TableUI SelectedColumn;
 
@@ -654,14 +598,11 @@ namespace IVSMlib.ViewModel
 
         public Int32 RullerThikknes=15;
 
-        public Point TableOffset = new Point(0, 70); //Global Table offset 
+        public Point TableOffset = new Point(0, 70); 
 
-        //----------------------------------------------------
+      
         public TimeAxis TimeAxisUI;
-        //----------------------------------------------------
-        // private MoveLine SelectedLine;
-
-        //----------------------------------------------------
+       
 
         private double x;
         private double y;
@@ -669,32 +610,16 @@ namespace IVSMlib.ViewModel
 
         public MouseButtonState MouseLeftButton { get; set; }
         public MouseButtonState MouseRightButton { get; set; }
-        //    private Point StartPos = new Point(0, 0);
-
-        //---------------------------
-        //  private bool IsMouseDown;
-        //---------------------------
-
-        //---------------------------------------------------?????????????????????
-        //      private List<Column> Columns = new List<Column>();
-        //  private List<Row> Rows = new List<Row>();
+      
 
         public List<List<Cell>> RowColumn { get; set; }
         public List<IVSMlib.VsmCanvas.LineUI.Line> MapLines { get; set; }
-        //---------------------------------------------------?????????????????????
+      
 
         public List<double> ColumnWidth = new List<double>();
-        //{
-        //    0,0,0,0
-        //};
 
         public List<double> RowHeight = new List<double>();
-        //{
-        //    0,0,0,0
-        //};
-
-
-        //-------------------------------------------------------------------------
+      
 
         public double x_pos
         {
@@ -722,10 +647,9 @@ namespace IVSMlib.ViewModel
         {
 
             Delete = new Command(DeleteCommand);
-          //  IVSM_Model = new IVSM();
 
             GlobalStore.CurrentIVSM = new IVSM();
-          //  ControlBar.TableName = GlobalStore.CurrentIVSM.MapName;
+        
 
             MapLines = new List<VsmCanvas.LineUI.Line>();
             FocusedUI = null;
@@ -740,36 +664,7 @@ namespace IVSMlib.ViewModel
 
             IsColWindowVisible = false;
 
-            //    FirstColumn = new Column();
-            //    FirstColumn.Index = 0;
-            //    FirstColumn.SetColumnWidth(TableHeigth);
-            //    FirstColumn.SetActiveMode(true);
-            //    FirstColumn.SetLocation(100, 0);
-            ////    FirstColumn.DrawUI(new Point(100, 0));
-
-            //    FirstColumn.PrevColumn = null;
-
-
-            //    var c_two = new Column();
-            //    c_two.Index = 1;
-            //    c_two.SetColumnWidth(TableHeigth);
-            //    c_two.SetLocation(170, 0);
-            // //   c_two.DrawUI(new Point(170, 0));
-
-            //    FirstColumn.NextColumn = c_two;
-
-            //    c_two.PrevColumn = FirstColumn;
-
-
-            //    LastColumn = new Column();
-            //    LastColumn.Index = 2;
-            //    LastColumn.SetColumnWidth(TableHeigth);
-            //    LastColumn.SetLocation(250, 0);
-            //    //   c_three.DrawUI(new Point(250, 0));
-            //    LastColumn.NextColumn = null;
-
-            //    LastColumn.PrevColumn = c_two;
-            //    c_two.NextColumn = LastColumn;
+          
             CreateRullers();
             CreateNewColumns(new List<double>() { 100, 120, 60 });
             CreateNewRows(new List<double>() { 30, 50, 70 });
@@ -781,78 +676,12 @@ namespace IVSMlib.ViewModel
                                                                           GlobalStore.DefaultCellColor.G,
                                                                           GlobalStore.DefaultCellColor.B);
             }
-            
 
-            //    FirstRow = new Row();
-            //    FirstRow.Index = 0;
-            //    FirstRow.SetRowWidht(TableWidth);
-            //    FirstRow.SetActiveMode(true);
-            //    FirstRow.SetLocation(0, 20);
-            ////    FirstRow.DrawUI(new Point(0, 20));
-
-            //    FirstRow.PrevRow = null;
-
-            //    var r_two = new Row();
-            //    r_two.Index = 1;
-            //    r_two.SetRowWidht(TableWidth);
-            //    r_two.SetActiveMode(true);
-            //    r_two.SetLocation(0, 70);
-            //   // r_two.DrawUI(new Point(0, 70));
-            //    r_two.PrevRow = FirstRow;
-
-            //    FirstRow.NextRow = r_two;
-
-            //    LastRow = new Row();
-            //    LastRow.Index = 2;
-            //    LastRow.SetRowWidht(TableWidth);
-            //    LastRow.SetActiveMode(true);
-            //    LastRow.SetLocation(0, 140);
-            // //   r_tree.DrawUI(new Point(0, 140));
-
-            //    r_two.NextRow = LastRow;
-
-            //    LastRow.PrevRow = r_two;
-
-            //    LastRow.NextRow = null;
 
             SetDefaultCellSize();
 
-
-            //horisontal_ruler = new HorisontalRuler(this);
-            //horisontal_ruler.InsertButtonClick += InsertColBetwwen;
-            //horisontal_ruler.DeleteButtonClick += DeleteColumn;
-            //horisontal_ruler.SetWidth((int)TableWidth);
-            //horisontal_ruler.SetLocation(new Point(RullerThikknes, +TableOffset.Y));
-            //horisontal_ruler.DrawUI();
-
-            //vertical_ruler = new VerticalRuler(this);
-            //vertical_ruler.InsertButtonClick += InsertRowBetwwen;
-            //vertical_ruler.DeleteButtonClick += DeleteRow;
-            //vertical_ruler.SetHeigth((int)TableHeigth);
-            //vertical_ruler.SetLocation(new Point(0, RullerThikknes + TableOffset.Y));
-            //vertical_ruler.DrawUI();
-
             RullerBox = new DrawingVisual();
             DrawRullerBox();
-
-            //WorkingZoneBorder = new DrawingVisual();
-            //DrawBorder();
-
-
-            //FieldCanvas.AddVisual(WorkingZoneBorder);
-            //FieldCanvas.AddVisual(horisontal_ruler);
-            //FieldCanvas.AddVisual(vertical_ruler);
-
-            //  FieldCanvas.AddVisual(FirstColumn);
-            //  FieldCanvas.AddVisual(c_two);
-            //  FieldCanvas.AddVisual(LastColumn);
-          //  FieldCanvas.AddVisual(FirstRow);
-         //   FieldCanvas.AddVisual(r_two);
-         //   FieldCanvas.AddVisual(LastRow); 
-
-            //     mouseDD = Mouse_Down;
-
-            // MouseDownCommand = new Command(Mouse_Down);
 
             mouse_down = new Command(Mouse_Down);
 
@@ -878,7 +707,6 @@ namespace IVSMlib.ViewModel
 
             vertical_ruler.UpdateButtons();
             vertical_ruler.DrawUI();
-            //            int i = 0;
 
         }
 
@@ -941,12 +769,6 @@ namespace IVSMlib.ViewModel
                 ((WColumn)ColWindow).InsertColClick += InsertColl;
             }
 
-            //var point = Mouse.GetPosition(Application.Current.MainWindow);
-
-
-            //ColWindow.Left = point.X + WindowExtensions.GetWindowLeft(Window.GetWindow(window));
-            //ColWindow.Top = point.Y + WindowExtensions.GetWindowTop(Window.GetWindow(window));
-
             double l_offset = ColumnWidth[0] + vertical_ruler.GetWidth();
 
             for(int i =1; i<=col;i++)
@@ -967,13 +789,10 @@ namespace IVSMlib.ViewModel
 
 
             ColWindow.Show();
-           // ColWindow.Focus();
-            // Console.WriteLine(col.ToString());
         }
 
         private void RowButtonClick(int row)
         {
-          // Console.WriteLine("Row is ---->" + row.ToString());
             if (IsColWindowVisible == false)
             {
                 ColWindow = new WRow(row, RowHeight.Count());
@@ -981,13 +800,8 @@ namespace IVSMlib.ViewModel
                 ((WRow)ColWindow).InsertRowClick += InsertRow;
             }
 
-            //var point = Mouse.GetPosition(Application.Current.MainWindow);
-
-
-            //ColWindow.Left = point.X + WindowExtensions.GetWindowLeft(Window.GetWindow(window));
-            //ColWindow.Top = point.Y + WindowExtensions.GetWindowTop(Window.GetWindow(window));
-
-            double l_offset = RowHeight[0]/* + horisontal_ruler.GetHeight()*/;
+ 
+            double l_offset = RowHeight[0];
 
             for (int i = 1; i <= row; i++)
             {
@@ -1007,8 +821,6 @@ namespace IVSMlib.ViewModel
 
 
             ColWindow.Show();
-            // ColWindow.Focus();
-            // Console.WriteLine(col.ToString());
         }
 
         private void CreateDefaultCell(Int32 row_count=4, Int32 column_count=4)
@@ -1026,12 +838,6 @@ namespace IVSMlib.ViewModel
             {
                 RowColumn.Add(new List<Cell>());
             }
-            //{
-            //    new List<Cell>(),
-            //    new List<Cell>(),
-            //    new List<Cell>(),
-            //    new List<Cell>()
-            //};
 
             for (int i = 0; i <= row_count - 1; i++)
             {
@@ -1043,7 +849,6 @@ namespace IVSMlib.ViewModel
                     cell.SetHeight(RowHeight[i]);
                     cell.TableIndex = new Cell.CellIndex(i, j);
 
-                //    Console.WriteLine(ColumnWidth[j].ToString() + " " + RowHeight[i].ToString());
                     FieldCanvas.AddVisual(cell);
                     RowColumn[i].Add(cell);
 
@@ -1061,8 +866,6 @@ namespace IVSMlib.ViewModel
             cell.SetHeight(RowHeight[row]);
             cell.TableIndex = new Cell.CellIndex(row, col);
 
-            //    Console.WriteLine(ColumnWidth[j].ToString() + " " + RowHeight[i].ToString());
-            //    FieldCanvas.AddVisual(cell);
             FieldCanvas.AddVisualToBegin(cell);
             RowColumn[row][col] = null;
             RowColumn[row][col] = cell;
@@ -1093,7 +896,6 @@ namespace IVSMlib.ViewModel
             FirstColumn.SetColumnWidth(TableHeigth);
             FirstColumn.SetActiveMode(true);
             FirstColumn.SetLocation(columns[0], 0);
-            //    FirstColumn.DrawUI(new Point(100, 0));
             FirstColumn.PrevColumn = null;
 
             FieldCanvas.AddVisual(FirstColumn);
@@ -1284,10 +1086,6 @@ namespace IVSMlib.ViewModel
             double x = 0;
             double y = 0;
 
-           // Int32 row_pos;
-            //Int32 coll_pos;
-
-            //----------------------Row 0-------------------------------
             RowColumn[0][0].SetLocation(0+RullerThikknes, 0 + RullerThikknes + TableOffset.Y);
 
             while (col != null)
@@ -1297,10 +1095,6 @@ namespace IVSMlib.ViewModel
 
                 col = col.NextColumn;
             }
-
-            //----------------------------------------------------------
-
-            
 
             while (row !=null)
             {
@@ -1322,8 +1116,6 @@ namespace IVSMlib.ViewModel
         private void SetDefaultCellSize()
         {
             Column col = FirstColumn;
-
-           
 
             ColumnWidth.Add(col.GetPosition().X);
 
@@ -1380,25 +1172,19 @@ namespace IVSMlib.ViewModel
 
         public void Mouse_Down()
         {
-            //Console.WriteLine("from VM  l-  " + MouseLeftButton.ToString() + " - r -" + MouseRightButton.ToString());
             TableActions[(int)CurrentAction].MouseDownAction(new Point(x,y), new MouseState(MouseLeftButton, MouseRightButton));
            
-         //   IsMouseDown = true;
         }
 
         public void Mouse_Up()
         {
             TableActions[(int)CurrentAction].MouseUpAction(new Point(x, y));
 
-          //  IsMouseDown = false;
         }
 
         public void MouseMove()
         {
-          //  if(IsMouseDown)
-          //  {
                 TableActions[(int)CurrentAction].MouseMoveAction(new Point(x, y));
-           // }
         }
 
         public void AddCell(Cell cell, Int32 row, Int32 column)
@@ -1407,7 +1193,6 @@ namespace IVSMlib.ViewModel
             new_cell.SetSize(RowColumn[row][column].GetSize().Width, RowColumn[row][column].GetSize().Height);
             new_cell.SetLocation(RowColumn[row][column].GetLocation().X, RowColumn[row][column].GetLocation().Y);
             new_cell.TableIndex = new Cell.CellIndex(RowColumn[row][column].TableIndex.Row, RowColumn[row][column].TableIndex.Column);
-         //   new_cell.MouseResultEvent += CellDownEvent;
             new_cell.DrawUI();
           
 
@@ -1426,7 +1211,6 @@ namespace IVSMlib.ViewModel
             new_cell.SetSize(RowColumn[row][column].GetSize().Width, RowColumn[row][column].GetSize().Height);
             new_cell.SetLocation(RowColumn[row][column].GetLocation().X, RowColumn[row][column].GetLocation().Y);
             new_cell.TableIndex = new Cell.CellIndex(RowColumn[row][column].TableIndex.Row, RowColumn[row][column].TableIndex.Column);
-            //   new_cell.MouseResultEvent += CellDownEvent;
             new_cell.DrawUI();
 
 
@@ -1531,7 +1315,7 @@ namespace IVSMlib.ViewModel
             last_column.Index = LastColumn.Index + 1;
             last_column.SetColumnWidth(TableHeigth);
             last_column.SetLocation(TableOffset.X + TableWidth, 0);
-            //   c_three.DrawUI(new Point(250, 0));
+
             last_column.NextColumn = null;
 
             last_column.PrevColumn = LastColumn;
@@ -1541,8 +1325,6 @@ namespace IVSMlib.ViewModel
             LastColumn = null;
 
             LastColumn = last_column;
-
-            //          Console.WriteLine("prev - " + LastColumn.PrevColumn.Index.ToString() + "new - " + LastColumn.Index.ToString());
 
             LastColumn.DrawUI();
 
@@ -1557,7 +1339,6 @@ namespace IVSMlib.ViewModel
                 cell.SetHeight(RowHeight[row]);
                 cell.TableIndex = new Cell.CellIndex(row, ColumnWidth.Count - 1);
 
-                //    Console.WriteLine(ColumnWidth[j].ToString() + " " + RowHeight[i].ToString());
                 FieldCanvas.AddVisual(cell);
                 RowColumn[row].Add(cell);
             }
@@ -1588,7 +1369,7 @@ namespace IVSMlib.ViewModel
             horisontal_ruler.UpdateButtons();
             horisontal_ruler.DrawUI();
 
-            // MessageBox.Show("hfghgf");
+            
         }
 
         public void DeleteLastColl()
@@ -1621,7 +1402,7 @@ namespace IVSMlib.ViewModel
 
             DrawBorder();
             AddRowButton.SetSize(TableWidth, 40);
-           // TimeAxisUI.AddColumn();
+          
          
 
 
@@ -1664,18 +1445,13 @@ namespace IVSMlib.ViewModel
 
             LastRow.NextRow = null;
 
-          //  Column n_col = FirstColumn;
+         
 
             TableHeigth -= (int)RowHeight[RowHeight.Count - 1];
 
             RowHeight.RemoveAt(RowHeight.Count - 1);
 
-            //while (n_col != null)
-            //{
-            //    n_col.SetColumnWidth(TableHeigth);
-            //    n_col.DrawUI();
-            //    n_col = n_col.NextColumn;
-            //}
+           
             UpdateColumnSize();
 
             AddRowButton.SetLocation(new Point(TableOffset.X + RullerThikknes, TableOffset.Y + TableHeigth + RullerThikknes));
@@ -1768,10 +1544,7 @@ namespace IVSMlib.ViewModel
                 }
                 else
                 {
-                    //for(int col=0; col <= ColumnWidth.Count() -1; col++)
-                    //{
-                    //    ColumnWidth[col] = coll_width;
-                    //}
+                   
                     TableWidth = width;
                     TimeAxisUI.UpdateWidth(TableWidth);
                     TimeAxisUI.DrawUI();
@@ -1780,14 +1553,7 @@ namespace IVSMlib.ViewModel
                     DrawBorder();
                     AddRowButton.SetSize(TableWidth, 40);
                     UpdateRowsSize();
-                    //ChangeCellSize();
-
-                    //UpdateRowsSize();
-
-                    //for (int i = 0; i <= RowHeight.Count - 1; i++)
-                    //{
-                    //    RowColumn[i][ColumnWidth.Count - 1].DrawUI();
-                    //}
+                   
 
                     horisontal_ruler.SetWidth((int)TableWidth);
                     horisontal_ruler.DrawUI();
@@ -1817,7 +1583,7 @@ namespace IVSMlib.ViewModel
 
                 }
 
-                //TableHeigth = (int)height;
+               
 
                 AddRowButton.SetLocation(new Point(TableOffset.X + RullerThikknes, TableOffset.Y + TableHeigth + RullerThikknes));
 
@@ -1825,8 +1591,7 @@ namespace IVSMlib.ViewModel
                 vertical_ruler.DrawUI();
                 AddColumnButton.SetSize(40, TableHeigth);
 
-               // int last_row_index = RowHeight.Count() - 1;
-            //    RowHeight[last_row_index] = TableHeigth - LastRow.GetPosition().Y;
+             
                 ChangeCellSize();
                 UpdateColumnSize();
                 DrawBorder();
@@ -1990,7 +1755,7 @@ namespace IVSMlib.ViewModel
 
         public void SetAxisTimeMeg(Time.Type act_type, Time.Type wst_type, Time.Type mv_type)
         {
-            Console.WriteLine(act_type.ToString() + " -  " + wst_type.ToString() + " - " + mv_type.ToString());
+      
             TimeAxisUI.SetActionMeg(act_type);
             TimeAxisUI.SetWasteMeg(wst_type);
             TimeAxisUI.SetMoveMeg(mv_type);
@@ -2081,9 +1846,6 @@ namespace IVSMlib.ViewModel
         {
             InsertLastColumn();
 
-           // horisontal_ruler.HideColumnAddButton();
-        //    horisontal_ruler.ShowColumnAddButton();
-
             for (int i=ColumnWidth.Count()-1; i > to; i--)
             {
                 for(int row = 0; row <= RowHeight.Count - 1; row++)
@@ -2099,18 +1861,9 @@ namespace IVSMlib.ViewModel
                         RowColumn[row][i - 1].TableIndex.Column = RowColumn[row][i].TableIndex.Column;
                         RowColumn[row][i] = RowColumn[row][i - 1];
                        
-                        //---------
-
-                        //----------------
-                        //EmptyCell cell = new EmptyCell();
-                        //cell.MouseDownEvent += MapConstructorInstance.EmptyCellMouseDown;
-                        //cell.SetWidth(ColumnWidth[i-1]);
-                        //cell.SetHeight(RowHeight[row]);
-                        //cell.TableIndex = new Cell.CellIndex(RowColumn[row][i - 1].TableIndex.Row, RowColumn[row][i - 1].TableIndex.Column);
-                        //FieldCanvas.AddVisualToBegin(cell);
+                      
                         MakeEmptyCell(row_i, col_i);
-                     //   RowColumn[row][i - 1] = cell;
-                   //     RowColumn[row][i - 1].DrawUI();
+                    
                     }
                 }
             }
@@ -2131,7 +1884,7 @@ namespace IVSMlib.ViewModel
             vertical_ruler.HideRowAddButton();
             vertical_ruler.ShowRowAddButton();
 
-       //     Console.WriteLine(from.ToString() + " -- > " + to.ToString() + " RowHeightCout - " + RowHeight.Count().ToString());
+      
 
             for (int row = RowHeight.Count() - 1; row > to; row--)
             {
@@ -2167,7 +1920,7 @@ namespace IVSMlib.ViewModel
                 CurrentAction = Actions.RulerOptions;
                 horisontal_ruler.ShowDeleteButton();
                 vertical_ruler.ShowDeleteButton();
-              //  vertical_ruler.ShowRowAddButton();
+            
             }
             else
             {
@@ -2216,8 +1969,7 @@ namespace IVSMlib.ViewModel
 
             DeleteLastColl();
 
-            //horisontal_ruler.HideDeleteButton();
-            //horisontal_ruler.ShowDeleteButton();
+           
 
             horisontal_ruler.UpdateButtons();
             horisontal_ruler.DrawUI();
@@ -2258,8 +2010,7 @@ namespace IVSMlib.ViewModel
 
             DeleteLastRow();
 
-           // vertical_ruler.HideDeleteButton();
-         //   vertical_ruler.ShowDeleteButton();
+        
 
             SetCellLoc();
             ChangeCellSize();
@@ -2295,11 +2046,6 @@ namespace IVSMlib.ViewModel
 
             DocConnector.CurrentDocList.Clear();
 
-
-            //IVSM ivsm = new IVSM();
-
-            //GlobalStore.CurrentIVSM = ivsm;
-            //ControlBar.TableName = GlobalStore.CurrentIVSM.MapName;
         }
 
         public void ClearTableClick()
@@ -2315,7 +2061,7 @@ namespace IVSMlib.ViewModel
                 DomManager manager = new DomManager("IVSM");
                 MapDom.CreateMapDom(this, ref manager);
 
-                //  manager.setWriter(new XmlWriter());
+              
 
                 XmlWriter writer = new XmlWriter();
                 writer.SaveToFileTwo(filename, manager.GetRootNode());
@@ -2325,20 +2071,11 @@ namespace IVSMlib.ViewModel
                 SaveAs();
             }
 
-
-            // l.Text = "Сохранение.......";
-          
         }
 
         public void SaveAs()
         {
-            //string filename = "D:\\Projects\\IVSM\\IVSMlib\\Host\\bin\\Debug\\first.xml";
-
-            //DomManager manager = new DomManager("IVSM");
-            //MapDom.CreateMapDom(this, ref manager);
-
-            //XmlWriter writer = new XmlWriter();
-            //writer.SaveToFileTwo(filename, manager.GetRootNode());
+          
 
             System.Windows.Forms.SaveFileDialog saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 
@@ -2351,11 +2088,11 @@ namespace IVSMlib.ViewModel
             GlobalStore.CurrentFileName = filename;
 
 
-            // l.Text = "Сохранение.......";
+          
             DomManager manager = new DomManager("IVSM");
             MapDom.CreateMapDom(this, ref manager);
 
-            //  manager.setWriter(new XmlWriter());
+          
 
             XmlWriter writer = new XmlWriter();
             writer.SaveToFileTwo(filename, manager.GetRootNode());
@@ -2373,7 +2110,7 @@ namespace IVSMlib.ViewModel
 
         public void Open()
         {
-          //  string filename = "D:\\Projects\\IVSM\\IVSMlib\\Host\\bin\\Debug\\first.xml";
+        
 
             DomManager manager = new DomManager("VSM");
 
@@ -2394,7 +2131,7 @@ namespace IVSMlib.ViewModel
             ControlBar.SetSwithPos(MapConstructor.Mode.View);
             MapConstructorInstance.SetMode(MapConstructor.Mode.View);
             ControlBar.TableName = GlobalStore.CurrentIVSM.MapName;
-            //   ControlBar.EditMode = false;
+          
         }
 
 
@@ -2450,7 +2187,7 @@ namespace IVSMlib.ViewModel
             ImportManager.SetFileName(file_name);
             ImportManager.SetFormat(format);
             ImportManager.ImportImage(FieldCanvas, width, heigth, CropRect);
-          //  CreateImage(dt.GetHeight());
+        
 
             FieldCanvas.DeleteVisual(dt);
 
@@ -2510,12 +2247,8 @@ namespace IVSMlib.ViewModel
             
             FieldCanvas.AddVisual(dt);
             dt.Draw();
-          //  FieldCanvas.Height = TableHeigth + dt.GetHeight();
-
-
+        
             CreateImage(dt.GetHeight());
-
-       //     FieldCanvas.Height = TableHeigth - dt.GetHeight();
 
             FieldCanvas.DeleteVisual(dt);
 
@@ -2563,7 +2296,6 @@ namespace IVSMlib.ViewModel
             rtb.Render(FieldCanvas);
 
             var crop = new CroppedBitmap(rtb, new Int32Rect(0, 0, (int)TableWidth + 20, (int)(FieldCanvas.RenderSize.Height + extra_height+ 30)));
-            //(int)FieldCanvas.RenderSize.Width - 10
 
             BitmapEncoder pngEncoder = new PngBitmapEncoder();
             pngEncoder.Frames.Add(BitmapFrame.Create(crop));
@@ -2572,8 +2304,6 @@ namespace IVSMlib.ViewModel
             {
                 pngEncoder.Save(fs);
             }
-            //WSaveAsImage meg_w = new WSaveAsImage(this);
-            //meg_w.ShowDialog();
         }
 
         public bool IsEmptyTable()

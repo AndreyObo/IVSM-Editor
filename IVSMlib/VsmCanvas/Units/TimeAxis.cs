@@ -240,23 +240,14 @@ namespace IVSMlib.VsmCanvas.Units
         {
             DrawingContext dc = this.RenderOpen();
 
-            //Draw Action and Waste rec
 
             dc.DrawRectangle(ActionAxisBrush, new Pen(Brushes.Transparent, 1), new Rect(Loc.X , axis_y.Action, size.Width, axis_height.Action));
             dc.DrawRectangle(WasteAxisBrush, new Pen(Brushes.Transparent, 1), new Rect(Loc.X, axis_y.Move, size.Width, axis_height.Waste));
             dc.DrawRectangle(MoveAxisBrush, new Pen(Brushes.Transparent, 1), new Rect(Loc.X, axis_y.Waste, size.Width, axis_height.Move));
 
-      //     // double col = 0;
-      //      foreach (double width in ColumnWidth)
-      //      {
-      //     //     col += width;
-      ////          dc.DrawLine(new Pen(Brushes.DarkGray, 1), new Point(Loc.X + col, Loc.Y), new Point(Loc.X + col, Loc.Y + size.Height));
-      //      }
-
             double column_pos_x = 0;
             double prev_col_x = 0;
 
-     //       double prev_move_cell_width=0;
             for(Int32 col_index=0; col_index <=ColumnWidth.Count-1; col_index++)
             {
                 column_pos_x += ColumnWidth[col_index];
@@ -275,7 +266,6 @@ namespace IVSMlib.VsmCanvas.Units
                         dc.DrawText(action_t, new Point((Loc.X + prev_col_x + ColumnWidth[col_index] / 2) - action_t.Width/2, Loc.Y + 1));
                     }
 
-                    //  FormattedText WasteTime = new FormattedText(AxisTimes[col_index - 1].WasteTime.GetIn(WasteAxisMeg).ToString("0.0"), CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 12, Brushes.Black);
 
                     FormattedText waste_t = MakeWasteText(col_index - 1);
                     if (waste_t != null)
@@ -297,7 +287,7 @@ namespace IVSMlib.VsmCanvas.Units
                     if (col_index < ColumnWidth.Count - 1)
                     {
                         FormattedText move_t = MakeMoveText(col_index - 1);
-                        //     FormattedText MoveTime = new FormattedText(MoveAxisTimes[col_index-1].GetIn(MoveAxisMeg).ToString(), CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 12, Brushes.Black);
+                      
                         if (move_t != null)
                         {
                             dc.DrawText(move_t, new Point(Loc.X + column_pos_x - move_t.Width / 2, Loc.Y + axis_y.Waste));
@@ -348,10 +338,5 @@ namespace IVSMlib.VsmCanvas.Units
             return new FormattedText(MoveAxisTimes[col].GetIn(MoveAxisMeg).ToString("0.0"), CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 12, Brushes.Black);
         }
 
-        //public void SetAxisMegire(Time.Type megure)
-        //{
-        //    AxisTimeMegure = megure;
-
-        //}
     }
 }

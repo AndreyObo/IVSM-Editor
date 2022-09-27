@@ -87,7 +87,7 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseMove(Point e)
         {
-        //    throw new NotImplementedException();
+
         }
 
         public override void MouseLeave()
@@ -98,22 +98,22 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseDown(Point e)
         {
-         //   throw new NotImplementedException();
+
         }
 
         public override void MouseUp(Point e)
         {
-          ///  throw new NotImplementedException();
+
         }
 
         public override void Select()
         {
-          //  throw new NotImplementedException();
+
         }
 
         public override void Unselect()
         {
-           // throw new NotImplementedException();
+
         }
 
        

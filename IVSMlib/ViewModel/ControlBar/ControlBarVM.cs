@@ -35,47 +35,6 @@ namespace IVSMlib.ViewModel
         private bool _actionbtn;
         private bool _condition_btn;
 
-        //---------------------------
-
-        //private bool _edit_btn;
-        //private bool _view_btn;
-
-        //public bool EditBtnState
-        //{
-        //    get { return _edit_btn; }
-        //    set
-        //    {
-        //        if (value == true)
-        //        {
-        //            ViewBtnState = false;
-        //            mainTable.SetMode(Construct.MapConstructor.Mode.Edit);
-        //        }
-
-        //        _edit_btn = value;
-        //        OnPropertyChanged("EditBtnState");
-
-        //    }
-        //}
-
-        //public bool ViewBtnState
-        //{
-        //    get { return _view_btn; }
-        //    set
-        //    {
-        //        if (value == true)
-        //        {
-        //            EditBtnState = false;
-        //            mainTable.SetMode(Construct.MapConstructor.Mode.View);
-        //        }
-
-        //        _view_btn = value;
-        //        OnPropertyChanged("ViewBtnState");
-
-        //    }
-        //}
-
-        //-----------------------!!!!!!!!!!!!!!!!!!---------------
-
         private string t_name;
 
         public string TableName
@@ -234,8 +193,6 @@ namespace IVSMlib.ViewModel
 
             SwicthBlock = false;
 
-           //_view_btn = true;
-           //   _edit_btn = false;
             GlobalStore.CreatedItem = GlobalStore.TableItems.Action;
 
             SaveCommand = new Command(SaveClick);
@@ -431,7 +388,6 @@ namespace IVSMlib.ViewModel
         public void SetTableSizeParam(double widht, double height, bool ChangeCellSize)
         {
             mainTable.SetTableSize(widht, height, ChangeCellSize);
-          //  Console.WriteLine(widht.ToString() + " " + height.ToString() + " " + ChangeCellSize.ToString());
         }
 
         private void DeleteRowClick()
@@ -451,14 +407,6 @@ namespace IVSMlib.ViewModel
 
         private void ColorButtonClick()
         {
-            //ColorDialog dlg = new ColorDialog();
-
-            //if (dlg.ShowDialog() == DialogResult.OK)
-            //{
-
-            //    DocBarVm.ChangeColor(Color.FromArgb(dlg.Color.A, dlg.Color.R, dlg.Color.G, dlg.Color.B));
-            //    mainTable.SetColor(Color.FromArgb(dlg.Color.A, dlg.Color.R, dlg.Color.G, dlg.Color.B));
-            //}
             EditMode = false;
             Console.WriteLine("Color clik");
         }

@@ -78,15 +78,13 @@ namespace IVSMlib.VsmCanvas.MarksUI
             DecisionPropsHolder.OwnerType = PropsHolder.Type.Decision;
 
 
-            //   PropsHolders = new List<Props>();
-
             StringProps ProblemDescribe = new StringProps();
 
             ProblemDescribe.PropsEditType = StringProps.EditType.MultiLine;
             ProblemDescribe.Title = "Описание решения";
             ProblemDescribe.GetCurrentValueDelegate = GetDecision;
             ProblemDescribe.SetPropertyDelegate = SetDecision;
-            //      OrgamizationHolder.StringType = StringProps.Type.Line;
+
 
             DecisionPropsHolder.PropsList.Add(ProblemDescribe);
         }
@@ -125,7 +123,7 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
         public override void MouseDown(Point e)
         {
-            //throw new NotImplementedException();
+
         }
 
         public override void MouseEnter()
@@ -169,7 +167,7 @@ namespace IVSMlib.VsmCanvas.MarksUI
 
         public override void MouseUp(Point e)
         {
-            //  throw new NotImplementedException();
+
         }
 
         public override void Select()

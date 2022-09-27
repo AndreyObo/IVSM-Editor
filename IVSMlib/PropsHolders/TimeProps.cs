@@ -22,11 +22,7 @@ namespace IVSMlib.PropsHolders
 
         public override void GetNode(ref Node root)
         {
-            //List<Node.NodeFeature> feature = new List<Node.NodeFeature>();
 
-            //feature.Add(new Node.NodeFeature(Lexer.GetPropertyTag(Lexer.PropertyToken.Name), Name));
-
-            //root.AddNodeItem<string>(Lexer.GetPropertyTag(Lexer.PropertyToken.PropItem), GetCurrentValueDelegate(), feature);
         }
     }
 }

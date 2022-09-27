@@ -76,8 +76,7 @@ namespace IVSMlib.VsmCanvas.Units
         public override void DrawUI()
         {
             DrawingContext dc = this.RenderOpen();
-          //  IsImage = true;
-          //  source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory+ "/icons/add_ic.png"));
+
             if (IsVisible)
             {
                 dc.DrawRectangle(DrawBrush, DrawPen, new Rect(Location.X, Location.Y, this.size.Width, this.size.Height));
@@ -100,7 +99,6 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseDown(Point e)
         {
-            //  throw new NotImplementedException();
             Click.Invoke(this, null);
         }
 
@@ -118,22 +116,22 @@ namespace IVSMlib.VsmCanvas.Units
 
         public override void MouseMove(Point e)
         {
-         //   throw new NotImplementedException();
+
         }
 
         public override void MouseUp(Point e)
         {
-           // throw new NotImplementedException();
+
         }
 
         public override void Select()
         {
-            //throw new NotImplementedException();
+
         }
 
         public override void Unselect()
         {
-          //  throw new NotImplementedException();
+
         }
     }
 }

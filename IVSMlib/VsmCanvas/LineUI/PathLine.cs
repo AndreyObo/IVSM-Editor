@@ -50,12 +50,6 @@ namespace IVSMlib.VsmCanvas.LineUI
         public delegate void UpdateTime(Int32 f_coll, Int32 s_coll);
         public UpdateTime UpdateTimeCallbak;
 
-        //  private double start_x;
-        //   private double start_y;
-
-
-        //----------------------------
-
 
         //--********************************
         private Brush deb_brush_1;
@@ -73,15 +67,12 @@ namespace IVSMlib.VsmCanvas.LineUI
             MovePropsHolder.OwnerType = PropsHolder.Type.PathLine;
 
 
-            //   PropsHolders = new List<Props>();
-
             StringProps OrgamizationHolder = new StringProps();
 
             OrgamizationHolder.PropsEditType = StringProps.EditType.Line;
             OrgamizationHolder.Title = "Тип перемещения";
             OrgamizationHolder.GetCurrentValueDelegate = GetMoveType;
             OrgamizationHolder.SetPropertyDelegate = SetMoveType;
-            //      OrgamizationHolder.StringType = StringProps.Type.Line;
 
             MovePropsHolder.PropsList.Add(OrgamizationHolder);
 

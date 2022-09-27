@@ -19,7 +19,7 @@ namespace IVSMlib.ViewModel.ControlBar.Items
     {
         private TextBlock ItemLable;
         private Rectangle rect;
-     //   private CheckBox ColorCheck;
+
         private Button TransparantButton;
 
         BrushConverter converter;
@@ -46,11 +46,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
             rect.MouseEnter += RectEnter;
             rect.MouseLeave += RectLeave;
 
-            //ColorCheck = new CheckBox();
-            //ColorCheck.Content = "Прозрачный";
-            //Canvas.SetLeft(ColorCheck, SideMargin);
-            //ColorCheck.Click += ColorTransparantCheck;
-
             TransparantButton = new Button();
             Canvas.SetLeft(TransparantButton, SideMargin);
             TransparantButton.Height = 25;
@@ -62,12 +57,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
             rect.StrokeThickness = 0;
             rect.Stroke = Brushes.LightGreen;
-
-            //ColorButton = new Button();
-            //ColorButton.BorderThickness = new Thickness(0);
-            //ColorButton.Height = 20;
-            //ColorButton.Content = "";
-            //ColorButton.Click += ColorButtonClick;
 
             Separatior = new Line();
             Separatior.X1 = 0;
@@ -102,15 +91,12 @@ namespace IVSMlib.ViewModel.ControlBar.Items
 
             for (int i = 0; i <= GlobalStore.LastColors.Length - 1; i++)
             {
-                //OleColors[i] = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.FromArgb(GlobalStore.LastColors[i].A, GlobalStore.LastColors[i].R,
-                //    GlobalStore.LastColors[i].G, GlobalStore.LastColors[i].B));
                 OleColors[i] = System.Drawing.ColorTranslator.ToOle(GlobalStore.LastColors[i]);
             }
 
             System.Drawing.Color cur_color = System.Drawing.Color.FromArgb(Props.GetCurrentColorDelegate().A, Props.GetCurrentColorDelegate().R, Props.GetCurrentColorDelegate().G, Props.GetCurrentColorDelegate().B);
 
             OleColors[GlobalStore.LastColors.Length] = System.Drawing.ColorTranslator.ToOle(cur_color);
-            //    GlobalStore.LastColors[i].G, GlobalStore.LastColors[i].B));
 
             dlg.CustomColors = OleColors;
 
@@ -128,14 +114,8 @@ namespace IVSMlib.ViewModel.ControlBar.Items
             Props = (ColorProps)props;
             ItemLable.Text = Props.GetTitle();
             rect.Fill = new SolidColorBrush(Props.GetCurrentColorDelegate());
-            //if(Props.GetCurrentColorDelegate() == Colors.Transparent)
-            //{
-            //    ColorCheck.IsChecked = true;
-            //}
-            p_color = Props.GetCurrentColorDelegate();
-            //    ColorButton.Content = rect;
-            //    ColorButton.Background = 
 
+            p_color = Props.GetCurrentColorDelegate();
         }
 
         public override double GetHeight() => 115;
@@ -163,7 +143,6 @@ namespace IVSMlib.ViewModel.ControlBar.Items
         public override void SetWidth(double widht)
         {
             ItemLable.Width = widht - SideMargin * 2;
-            //  ColorButton.Width = widht - SideMargin * 2;
             rect.Width = widht - SideMargin * 2;
             
             Separatior.X2 = widht;
